@@ -47,8 +47,7 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <!-- v-if="displayProfileLink"> -->
+        <li class="nav-item"  v-if="$store.state.userData.status === 'online'">
           <a class="nav-link" href="#">
             <i class="fa fa-envelope-o">
               <span class="badge badge-warning">11</span>
@@ -56,11 +55,11 @@
             <router-link
               :to="{
                 name: 'userProfile',
-                params: { userName: userData.userName },
+                params: { userName:$store.state.userData.userName },
               }"
             >
-              Profile</router-link
-            >
+             My Profile
+</router-link>
           </a>
         </li>
 
@@ -150,36 +149,22 @@ export default {
           unLikes: [],
         },
 
-        displayProfileLink: false,
+  
       },
 
-      beforeMount() {
-        this.handleuserProfileLink();
-      },
-
-      beforeUnmount() {
-        this.handleuserProfileLink();
-      },
       methods: {
-        handleuserProfileLink() {
-          this.userData.userName === "Guest"
-            ? (this.displayProfileLink = false)
-            : (this.displayProfileLink = true);
-        },
 
-        handleuserData(userData) {
-          this.userData = userData;
-          console.log("yes yes yes");
-        },
+
+
       },
-      // mounted() {
-      // this.handleuserProfileLink()
-      // },
-      // beforeMount() {
-      //   this.handleuserProfileLink()
-      // },
-    };
-  },
+    //  updated() {
+    //     this.handleuserProfileLink()
+    //  },
+    //   // beforeMount() {
+    //   //   this.handleuserProfileLink()
+    //   // },
+    }
+  }
 };
 </script>
 
