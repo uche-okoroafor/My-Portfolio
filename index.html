@@ -1,1 +1,573 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/SoMedia/favicon.ico"><title>somedia</title><link href="/SoMedia/css/app.502b78e6.css" rel="preload" as="style"><link href="/SoMedia/css/chunk-vendors.55204a1e.css" rel="preload" as="style"><link href="/SoMedia/js/app.cb241726.js" rel="preload" as="script"><link href="/SoMedia/js/chunk-vendors.2e1c737e.js" rel="preload" as="script"><link href="/SoMedia/css/chunk-vendors.55204a1e.css" rel="stylesheet"><link href="/SoMedia/css/app.502b78e6.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but somedia doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/SoMedia/js/chunk-vendors.2e1c737e.js"></script><script src="/SoMedia/js/app.cb241726.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Tumbir</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <nav id="nav">
+            <div class="navbar">
+                <div class="logo-img" ref="threshold">
+                    <a href="#home"><img src="/assets/images/logo.png" alt="logo"></a>
+                </div>
+
+                <div class="login-signup-btn">
+
+                    <a href="#!" class="btn  ">Log in</a> <a href="#!" class="btn mr-3 ml-3">Sign up</a>
+
+                </div>
+            </div>
+            <ul class="nav-indicator-container indicator-group" id="nav-indicator">
+                <li v-for="indicator in indicatorList" @click='activeIndicator(indicator)' class="indicator"
+                    :class="indicator.isActive"><a :href="indicator.id" :id='indicator.linkId'></a> </li>
+
+            </ul>
+        </nav>
+        <section id="login" ref="login" class="login">
+
+            <div id="intro-Container">
+                <p>Hi, My Name Is </p>
+                <h1>Uche Okoroafor.<br>I am a FrontEnd Web Developer</h1>
+                <p>I am currently Based in Dubai. I have passion for coding and challenging <br> myself creatively.<br>
+                    I can
+                    create
+                    simple and amazing responsive websites with a whimsical twist</p>
+
+            </div>
+
+            <div class="about-tumblr">
+                <a href="#About">About Me?</a>
+            </div>
+
+        </section>
+
+
+
+
+
+
+        <section id="About" ref="About" class="About">
+
+            <div class="My-Photo" ref="photoBig">
+                <img src="/assets/images/uche.jpg" alt="My-Photo">
+            </div>
+            <div class="content-text">
+
+                <div class="p-tag   text1 " ref="text1">My Name is <h3 style="display: inline;">Uchechukwu okoroafor
+                    </h3>
+                    <p>You can call me <strong> Uche</strong> </p>
+                    I am a FrontEnd Web developer and a Graduate of Computer Engineering I am currently Based
+                    in
+                    Dubai, United Arab Emirates.
+                </div>
+
+                <div class="p-tag  text2" ref="text2">
+                    I am an excellent savvy, enthusiastic and result oriented individual, seeking employment in a
+                    dynamic
+                    environment that offers an exceptional knowledge of absorbing information, analyzing problems,
+                    making
+                    objective decisions and
+                    working with existing human and material resources, so as to achieve a high degree of work
+                    efficiency.
+                </div>
+
+
+                <div class="p-tag  text3" ref="text3">
+                    <p>I have passion for coding and challenging myself creatively.I enjoy learning new skills daily,and
+                        staying connected, and involved with my fellow developers.</p>
+
+                </div>
+
+
+
+                <div class="p-tag  text4" ref="text4">
+                    Here are the technologies I've been working with : <br>
+
+                    <div class="text4-list">
+                        <ul>
+                            <li>HTML5 <i style="color: #DD4B25;" class="fab fa-html5"></i></li>
+                            <li>CSS3 <i style="color:#254BDD ;" class="fab fa-css3-alt"></i></li>
+                            <li>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i> </li>
+                            <li>Responsive Web Design</li>
+
+                        </ul>
+                        <ul>
+                            <li>Javascript <i style="color:#F7DF1E ;" class="fab fa-js-square"></i></li>
+                            <li>JQuery </li>
+                            <li>Vue <i style="color:#1ef78a ;" class="fab fa-vuejs"></i></li>
+                            <li>React <i style="color:#5ED3F3 ;" class="fab fa-react"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 
+                <div class="p-tag  text2">
+                </div> -->
+
+
+                <!-- <p>You can call me <strong> Uche</strong></p>
+               
+                <p> I am an excellent savvy, enthusiastic and result oriented individual, seeking employment in a
+                    dynamic
+                    environment that offers an exceptional knowledge of absorbing information, analyzing problems,
+                    making
+                    objective decisions and
+                    working with existing human and material resources, so as to achieve a high degree of work
+                    efficiency.</p> -->
+                <!-- <p>I have passion for coding and challenging myself creatively.
+                    I enjoy learning new skills daily,and staying connected, and involved with my fellow developers.</p>
+
+
+            </div>
+        <div class="aboutmed2">
+          <h4>Technical Skills</h4>
+          <div class="listalign">
+            <div>
+              <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Javascript</li>
+                <li>JQuery</li>
+                <li>Vue</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+
+                <li>React</li>
+                <li>Bootstrap</li>
+                <li>Python</li>
+                <li>Responsive Web Design</li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+
+                <!-- <div class="icons">
+                <i class="fab fa-tumblr fa-2x Tumblr " ref="tumblrIcon"></i>
+                <i class="fas fa-plus" ref="plusIcon"></i>
+                <i class="fas fa-plus fa-plus-big " ref="plusIconBig"></i>
+                <i class="fas fa-heart  fa-heart-small" ref="heartSmall"></i>
+                <i class="fas fa-heart  fa-heart-big" ref="heartBig"></i>
+                <i class="fas fa-plus fa-plus2" ref="plusIconTwo"></i>
+                <i class="fas fa-heart  fa-heart-smaller" ref="heartSmaller"></i>
+                <svg viewBox="0 0 19 16" width="90" height="90" fill="#00b82f" class="headPhone" ref="headPhoneBig">
+                    <path
+                        d="M17.7 7.3c-.4-4.4-4-7.3-8.3-7.3-4.3 0-7.9 2.9-8.3 7.4C.5 7.4 0 8 0 8.6v5c0 .8.6 1.4 1.3 1.4H4c.2.4.8 1 1.2 1 .6 0 .8-1 .8-1.6V7.8c0-.5-.2-1.6-.8-1.6-.4 0-1 .8-1.2 1.1H2.9c.4-3.5 3.2-5.6 6.5-5.6s6.2 2.1 6.5 5.6H15c0-.3-.7-1.1-1.1-1.1-.6 0-.9 1-.9 1.6v6.6c0 .5.3 1.6.9 1.6.4 0 1.1-.6 1.2-1h2.6c.7 0 1.3-.6 1.3-1.3v-5c0-.8-.6-1.3-1.3-1.4zM3 8.5v1l-2 1.3V8.5h2zm15 .9l-2 1.3V8.5h2v.9zm-6.4.3l-1.6.5V6.4c0-.1-.1-.2-.2-.2s-.2 0-.2.1L7.2 12v.2c.1.1.1.1.2.1L9 12v3.8c0 .1-.2.2-.1.2h.3c.1 0 .2 0 .2-.1l2.4-5.9v-.2c-.1-.1-.2-.1-.2-.1z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 20.8 13" width="100" height="100" fill="#00b82f" class="text-big" ref="textBig">
+                    <path
+                        d="M.1 13h2.8l.9-3h4.7l.8 3h2.9L7.7 0h-3L.1 13zm6-10.1l2 5.1H4.2l1.9-5.1zM20 10V6c0-1.1-.2-1.9-1-2.3-.7-.5-1.7-.7-2.7-.7-1.6 0-2.7.4-3.4 1.2-.4.5-.6 1.2-.7 2h2.4c.1-.4.2-.6.4-.8.2-.3.6-.4 1.2-.4.5 0 .9.1 1.2.2.3.1.4.4.4.8 0 .3-.2.5-.5.7-.2.1-.5.2-1 .2l-.9.1c-1 .1-1.7.3-2.2.6-.9.5-1.4 1.3-1.4 2.5 0 .9.3 1.6.8 2 .6.5 1.3.9 2.2.9.7 0 1.2-.3 1.7-.6.4-.2.8-.6 1.2-.9 0 .2 0 .4.1.6 0 .2.1.8.2 1h2.7v-.8c-.1-.1-.3-.2-.4-.3.1-.3-.3-1.7-.3-2zm-2.2-1.1c0 .8-.3 1.4-.7 1.7-.4.3-1 .5-1.5.5-.3 0-.6-.1-.9-.3-.2-.2-.4-.5-.4-.9 0-.5.2-.8.6-1 .2-.1.6-.2 1.1-.3l.6-.1c.3-.1.5-.1.7-.2.2-.1.3-.1.5-.2v.8z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 18.7 17" width="65" height="65" fill="#00b82f" ref="chatBig" class="chat-big">
+                    <path
+                        d="M16 6.1V2.6C16 .8 15 0 13.1 0H2.9C1 0 0 1.1 0 3.3v10.4C0 15.9 1 17 2.9 17h10.2c1.9 0 2.9-.8 2.9-2.6v-2.9l2.7-2.9c0-.1-2.7-2.5-2.7-2.5zm-4.5-.7c0-.5.3-.8.7-.8s.8.3.8.8v1.7l-.3 2.5c0 .3-.2.4-.4.4s-.4-.1-.4-.4l-.3-2.5V5.4zm-3.8 6.4c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V9.1C6.3 8.4 6 8 5.4 8c-.5 0-1 .4-1 1.2v2.6c0 .4-.1.8-.7.8s-.7-.4-.7-.8V5.4c0-.5.3-.8.7-.8.4 0 .7.3.7.8v2.1c.3-.4.7-.8 1.5-.8s1.7.5 1.7 2c.1.1.1 3.1.1 3.1zm2.5 0c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V7.5c0-.4.1-.8.7-.8.5 0 .7.4.7.8v4.3zm-.7-5.6c-.4 0-.7-.4-.7-.8s.3-.8.7-.8c.4 0 .7.4.7.8s-.3.8-.7.8zm2.8 6.3c-.4 0-.8-.4-.8-.9s.3-.9.8-.9.8.4.8.9-.4.9-.8.9z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 16 15" width="80" height="80" fill="#00b82f" class="video-big" ref="videoBig">
+                    <path
+                        d="M15.7 7.8c-.2-.1-.5 0-.6.1l-2.9 2.2c-.1.1-.1.1-.2.1V8H0v3h2v3.2c0 .4.3.8.8.8h8.4c.5 0 .8-.4.8-.8V12c0 .1.1.2.2.2l2.9 2.2c.2.2.4.2.6.1.2-.1.3-.3.3-.5V8.4c0-.2-.1-.5-.3-.6zM2.8 6.9c.3 0 .8.1 1.1.1h5.5c.3 0 .8-.1 1-.1 1.6-.3 2.8-1.7 2.8-3.4 0-1.9-1.6-3.5-3.5-3.5-1.2 0-2.4.6-3 1.7h-.1C5.9.6 4.8 0 3.6 0 1.6 0 0 1.6 0 3.5c0 1.7 1.2 3 2.8 3.4zM9 4.2c1 0 1.8-.8 1.8-1.8v-.3c.4.3.6.8.6 1.4 0 1-.8 1.8-1.8 1.8-.9 0-1.6-.6-1.8-1.5.3.3.7.4 1.2.4zm-6.2.1c1 0 1.8-.8 1.8-1.8v-.3c.4.2.6.7.6 1.3 0 1-.8 1.8-1.8 1.8-.9 0-1.6-.6-1.8-1.5.3.3.7.5 1.2.5z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 16 15" width="80" height="80" fill="#00b82f" class="video-bigg" ref="videoBigg">
+                    <path
+                        d="M15.7 7.8c-.2-.1-.5 0-.6.1l-2.9 2.2c-.1.1-.1.1-.2.1V8H0v3h2v3.2c0 .4.3.8.8.8h8.4c.5 0 .8-.4.8-.8V12c0 .1.1.2.2.2l2.9 2.2c.2.2.4.2.6.1.2-.1.3-.3.3-.5V8.4c0-.2-.1-.5-.3-.6zM2.8 6.9c.3 0 .8.1 1.1.1h5.5c.3 0 .8-.1 1-.1 1.6-.3 2.8-1.7 2.8-3.4 0-1.9-1.6-3.5-3.5-3.5-1.2 0-2.4.6-3 1.7h-.1C5.9.6 4.8 0 3.6 0 1.6 0 0 1.6 0 3.5c0 1.7 1.2 3 2.8 3.4zM9 4.2c1 0 1.8-.8 1.8-1.8v-.3c.4.3.6.8.6 1.4 0 1-.8 1.8-1.8 1.8-.9 0-1.6-.6-1.8-1.5.3.3.7.4 1.2.4zm-6.2.1c1 0 1.8-.8 1.8-1.8v-.3c.4.2.6.7.6 1.3 0 1-.8 1.8-1.8 1.8-.9 0-1.6-.6-1.8-1.5.3.3.7.5 1.2.5z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 17 15" width="100" height="100" fill="#00b82f" class="photo-small" ref="photoSmall">
+                    <path
+                        d="M14.6 1h-2.7l-.6-1h-6l-.6 1H2.4C1.1 1 0 2 0 3.3v9.3C0 13.9 1.1 15 2.4 15h12.2c1.3 0 2.4-1.1 2.4-2.4V3.3C17 2 15.9 1 14.6 1zM8.3 13.1c-2.9 0-5.2-2.3-5.2-5.1s2.3-5.1 5.2-5.1c2.9 0 5.2 2.3 5.2 5.1s-2.3 5.1-5.2 5.1zm5.9-8.3c-.6 0-1.1-.5-1.1-1.1 0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1c0 .6-.5 1.1-1.1 1.1zm-10 3.1c0 1.2.5 2.2 1.3 3 0-.2 0-.4-.1-.6 0-2.2 1.8-4 4.1-4 1.1 0 2 .4 2.8 1.1-.3-2-2-3.4-4-3.4-2.2-.1-4.1 1.7-4.1 3.9z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 17 15" width="120" height="120" fill="#00b82f" class="photo-big" >
+                    <path
+                        d="M14.6 1h-2.7l-.6-1h-6l-.6 1H2.4C1.1 1 0 2 0 3.3v9.3C0 13.9 1.1 15 2.4 15h12.2c1.3 0 2.4-1.1 2.4-2.4V3.3C17 2 15.9 1 14.6 1zM8.3 13.1c-2.9 0-5.2-2.3-5.2-5.1s2.3-5.1 5.2-5.1c2.9 0 5.2 2.3 5.2 5.1s-2.3 5.1-5.2 5.1zm5.9-8.3c-.6 0-1.1-.5-1.1-1.1 0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1c0 .6-.5 1.1-1.1 1.1zm-10 3.1c0 1.2.5 2.2 1.3 3 0-.2 0-.4-.1-.6 0-2.2 1.8-4 4.1-4 1.1 0 2 .4 2.8 1.1-.3-2-2-3.4-4-3.4-2.2-.1-4.1 1.7-4.1 3.9z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 19 16" width="75" height="75" fill="#00b82f" class="headphone-small"
+                    ref="headPhoneSmall">
+                    <path
+                        d="M17.7 7.3c-.4-4.4-4-7.3-8.3-7.3-4.3 0-7.9 2.9-8.3 7.4C.5 7.4 0 8 0 8.6v5c0 .8.6 1.4 1.3 1.4H4c.2.4.8 1 1.2 1 .6 0 .8-1 .8-1.6V7.8c0-.5-.2-1.6-.8-1.6-.4 0-1 .8-1.2 1.1H2.9c.4-3.5 3.2-5.6 6.5-5.6s6.2 2.1 6.5 5.6H15c0-.3-.7-1.1-1.1-1.1-.6 0-.9 1-.9 1.6v6.6c0 .5.3 1.6.9 1.6.4 0 1.1-.6 1.2-1h2.6c.7 0 1.3-.6 1.3-1.3v-5c0-.8-.6-1.3-1.3-1.4zM3 8.5v1l-2 1.3V8.5h2zm15 .9l-2 1.3V8.5h2v.9zm-6.4.3l-1.6.5V6.4c0-.1-.1-.2-.2-.2s-.2 0-.2.1L7.2 12v.2c.1.1.1.1.2.1L9 12v3.8c0 .1-.2.2-.1.2h.3c.1 0 .2 0 .2-.1l2.4-5.9v-.2c-.1-.1-.2-.1-.2-.1z">
+                    </path>
+                </svg>
+
+                <svg viewBox="0 0 18.7 17" width="80" height="80" fill="#00b82f" ref="chatBigger" class="chat-bigger">
+                    <path
+                        d="M16 6.1V2.6C16 .8 15 0 13.1 0H2.9C1 0 0 1.1 0 3.3v10.4C0 15.9 1 17 2.9 17h10.2c1.9 0 2.9-.8 2.9-2.6v-2.9l2.7-2.9c0-.1-2.7-2.5-2.7-2.5zm-4.5-.7c0-.5.3-.8.7-.8s.8.3.8.8v1.7l-.3 2.5c0 .3-.2.4-.4.4s-.4-.1-.4-.4l-.3-2.5V5.4zm-3.8 6.4c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V9.1C6.3 8.4 6 8 5.4 8c-.5 0-1 .4-1 1.2v2.6c0 .4-.1.8-.7.8s-.7-.4-.7-.8V5.4c0-.5.3-.8.7-.8.4 0 .7.3.7.8v2.1c.3-.4.7-.8 1.5-.8s1.7.5 1.7 2c.1.1.1 3.1.1 3.1zm2.5 0c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V7.5c0-.4.1-.8.7-.8.5 0 .7.4.7.8v4.3zm-.7-5.6c-.4 0-.7-.4-.7-.8s.3-.8.7-.8c.4 0 .7.4.7.8s-.3.8-.7.8zm2.8 6.3c-.4 0-.8-.4-.8-.9s.3-.9.8-.9.8.4.8.9-.4.9-.8.9z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 18.7 17" width="100" height="100" fill="#00b82f" ref="chatBiggest"
+                    class="chat-biggest">
+                    <path
+                        d="M16 6.1V2.6C16 .8 15 0 13.1 0H2.9C1 0 0 1.1 0 3.3v10.4C0 15.9 1 17 2.9 17h10.2c1.9 0 2.9-.8 2.9-2.6v-2.9l2.7-2.9c0-.1-2.7-2.5-2.7-2.5zm-4.5-.7c0-.5.3-.8.7-.8s.8.3.8.8v1.7l-.3 2.5c0 .3-.2.4-.4.4s-.4-.1-.4-.4l-.3-2.5V5.4zm-3.8 6.4c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V9.1C6.3 8.4 6 8 5.4 8c-.5 0-1 .4-1 1.2v2.6c0 .4-.1.8-.7.8s-.7-.4-.7-.8V5.4c0-.5.3-.8.7-.8.4 0 .7.3.7.8v2.1c.3-.4.7-.8 1.5-.8s1.7.5 1.7 2c.1.1.1 3.1.1 3.1zm2.5 0c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V7.5c0-.4.1-.8.7-.8.5 0 .7.4.7.8v4.3zm-.7-5.6c-.4 0-.7-.4-.7-.8s.3-.8.7-.8c.4 0 .7.4.7.8s-.3.8-.7.8zm2.8 6.3c-.4 0-.8-.4-.8-.9s.3-.9.8-.9.8.4.8.9-.4.9-.8.9z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 17 13" width="90" height="90" fill="#00b82f" class="quote-one" ref="quoteOne">
+                    <path
+                        d="M3.5 5.5C4 3.7 5.8 2.4 7.2 1.3L5.9 0C3 1.8 0 5 0 8.5 0 11 1.3 13 4 13c2 0 3.7-1.5 3.7-3.6C7.7 7 6 5.5 3.5 5.5zm9.3 0c.4-1.8 2.2-3.1 3.7-4.2L15.2 0c-2.8 1.8-5.9 5-5.9 8.5 0 2.4 1.3 4.5 4 4.5 2 0 3.7-1.5 3.7-3.6 0-2.4-1.7-3.9-4.2-3.9z">
+                    </path>
+                </svg>
+                <svg viewBox="0 0 17 13" width="90" height="90" fill="#00b82f" class="quote-two" ref="quoteTwo">
+                    <path
+                        d="M3.5 5.5C4 3.7 5.8 2.4 7.2 1.3L5.9 0C3 1.8 0 5 0 8.5 0 11 1.3 13 4 13c2 0 3.7-1.5 3.7-3.6C7.7 7 6 5.5 3.5 5.5zm9.3 0c.4-1.8 2.2-3.1 3.7-4.2L15.2 0c-2.8 1.8-5.9 5-5.9 8.5 0 2.4 1.3 4.5 4 4.5 2 0 3.7-1.5 3.7-3.6 0-2.4-1.7-3.9-4.2-3.9z">
+                    </path>
+                </svg>
+
+                <i class="fas fa-link link-big" ref="linkBig"></i>
+                <i class="fas fa-link link-small" ref="linkSmall"></i>
+                <i class="fas fa-retweet retweet-small" ref="retweetSmall"></i>
+                <i class="fas fa-retweet retweet-big" ref="retweetBig"></i>
+
+
+
+
+
+            </div> -->
+
+
+        </section>
+        <section id="Blogs" ref="Blogs">
+            <div class="projects">
+                <h3>
+                    These are Some of My Works.</h3>
+
+            </div>
+
+            <!-- <div class="loading" ref="loading">
+                <div ref="loadOne"></div>
+                <div ref="loadTwo"></div>
+                <div ref="loadThree"></div>
+            </div> -->
+
+            <div class="Blog" ref="Blog">
+                <a href="" class="img1" ref="img1">
+                    <img src="/assets/images/somedia1.jpg" alt="somedia">
+
+                    <span class="imgtitle-container">
+                        <span class="img-title1">Memory Game</span>
+                    </span>
+                </a>
+                        <div class="img-backdrop"></div>
+
+                <a href="" class="img2" ref="img2">
+                    <img src="/assets/images/contactmanager.jpg" alt="contact">
+                    <span class="imgtitle-container">
+                        <span class="img-title2">Tumblr Clone</span>
+                    </span>
+                </a>                        <div class="img-backdrop"></div>
+
+                <a href="" class="img3" ref="img3">
+                    <img src="/assets/images/tumblrImg2.jpg" alt="tumblr">
+                    <span class="imgtitle-container">
+                        <span class="img-title3">Contact Manager</span>
+                        
+                    </span>
+                </a><div class="img-backdrop"></div>
+                <a href="" class="img4" ref="img4">
+                    <img src="/assets/images/memoryGame.jpg" alt="memorygame">
+                    <span class="imgtitle-container">
+                        <span class="img-title4">SoMedia</span>
+                        
+                    </span>
+                </a><div class="img-backdrop"></div>
+<div class="hoverControl" ref="hoverControl"></div>
+                <!-- <div v-for="blog in blogsArts" class="blogs" ref="blogs">
+                    <div class='blog-heading'>
+                        <div class="blog-contents">
+                            <img :src="blog.avatar" alt="avatar">
+                            <span>{{blog.name}}</span>
+                            <span>Follow</span>
+
+                        </div>
+                        <span>
+                            <i class="fas fa-ellipsis-h"></i>
+                        </span>
+
+                    </div>
+                    <div class='blog-body'><img :src="blog.artUrl" alt="img-blogs"></div>
+                    <div class='blog-footer'><span>{{blog.notes}} Notes</span></div>
+                </div> -->
+
+            </div>
+
+
+        </section>
+        <section id="workflow" ref="workflow" class="workflow">
+
+            <div class="work-icons">
+
+
+                <div class="somedia-box" ref="sleepyBox">
+
+                    <img src="assets/images/somedia2.jpg" alt="sleeping-box">
+                    <!-- <div class="icons-container">
+                        <div class="icon">
+                            <div>
+                                <svg viewBox="0 0 20.8 13" width="40" height="35" color="green">
+                                    <path
+                                        d="M.1 13h2.8l.9-3h4.7l.8 3h2.9L7.7 0h-3L.1 13zm6-10.1l2 5.1H4.2l1.9-5.1zM20 10V6c0-1.1-.2-1.9-1-2.3-.7-.5-1.7-.7-2.7-.7-1.6 0-2.7.4-3.4 1.2-.4.5-.6 1.2-.7 2h2.4c.1-.4.2-.6.4-.8.2-.3.6-.4 1.2-.4.5 0 .9.1 1.2.2.3.1.4.4.4.8 0 .3-.2.5-.5.7-.2.1-.5.2-1 .2l-.9.1c-1 .1-1.7.3-2.2.6-.9.5-1.4 1.3-1.4 2.5 0 .9.3 1.6.8 2 .6.5 1.3.9 2.2.9.7 0 1.2-.3 1.7-.6.4-.2.8-.6 1.2-.9 0 .2 0 .4.1.6 0 .2.1.8.2 1h2.7v-.8c-.1-.1-.3-.2-.4-.3.1-.3-.3-1.7-.3-2zm-2.2-1.1c0 .8-.3 1.4-.7 1.7-.4.3-1 .5-1.5.5-.3 0-.6-.1-.9-.3-.2-.2-.4-.5-.4-.9 0-.5.2-.8.6-1 .2-.1.6-.2 1.1-.3l.6-.1c.3-.1.5-.1.7-.2.2-.1.3-.1.5-.2v.8z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>Text</span>
+                        </div>
+                        <div class="icon">
+                            <div>
+                                <svg viewBox="0 0 17 15" width="40" height="35" fill="RGB(var(--red))">
+                                    <path
+                                        d="M14.6 1h-2.7l-.6-1h-6l-.6 1H2.4C1.1 1 0 2 0 3.3v9.3C0 13.9 1.1 15 2.4 15h12.2c1.3 0 2.4-1.1 2.4-2.4V3.3C17 2 15.9 1 14.6 1zM8.3 13.1c-2.9 0-5.2-2.3-5.2-5.1s2.3-5.1 5.2-5.1c2.9 0 5.2 2.3 5.2 5.1s-2.3 5.1-5.2 5.1zm5.9-8.3c-.6 0-1.1-.5-1.1-1.1 0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1c0 .6-.5 1.1-1.1 1.1zm-10 3.1c0 1.2.5 2.2 1.3 3 0-.2 0-.4-.1-.6 0-2.2 1.8-4 4.1-4 1.1 0 2 .4 2.8 1.1-.3-2-2-3.4-4-3.4-2.2-.1-4.1 1.7-4.1 3.9z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>Photo</span>
+                        </div>
+                        <div class="icon">
+                            <div>
+                                <svg viewBox="0 0 17 13" width="40" height="35" fill="RGB(var(--orange))">
+                                    <path
+                                        d="M3.5 5.5C4 3.7 5.8 2.4 7.2 1.3L5.9 0C3 1.8 0 5 0 8.5 0 11 1.3 13 4 13c2 0 3.7-1.5 3.7-3.6C7.7 7 6 5.5 3.5 5.5zm9.3 0c.4-1.8 2.2-3.1 3.7-4.2L15.2 0c-2.8 1.8-5.9 5-5.9 8.5 0 2.4 1.3 4.5 4 4.5 2 0 3.7-1.5 3.7-3.6 0-2.4-1.7-3.9-4.2-3.9z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>Quote</span>
+                        </div>
+                        <div class="icon">
+                            <div>
+                                <svg viewBox="0 0 17 17" width="40" height="35" fill="RGB(var(--green))">
+                                    <path
+                                        d="M9.9 5.1c-.2.3-.5 1.4-.6 2.6l1.1-.1c.7-.1 1.3-.3 1.5-.5.6-.6.6-1.4 0-2-.6-.5-1.4-.5-2 0zM8.5 0C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zm4.4 8.2c-.5.5-1.5.8-2.5.9l-1.2.2c-.1 1.3-.4 2.9-1 3.6-1.1 1.1-3 1.2-4.1 0-1.1-1.1-1.1-3 0-4.1.5-.5 1.5-.8 2.6-.9v1.5c-1.2.3-1.5.5-1.6.5-.6.6-.6 1.4 0 2 .5.5 1.4.5 2 0 .2-.2.5-1.1.6-2.5l.1-.9c0-1.3.2-3.6 1-4.4 1.1-1.1 3-1.2 4.1 0 1.2 1.1 1.2 2.9 0 4.1z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>Link</span>
+                        </div>
+                        <div class="icon">
+                            <div>
+                                <svg viewBox="0 0 18.7 17" width="40" height="35" fill="RGB(var(--blue))">
+                                    <path
+                                        d="M16 6.1V2.6C16 .8 15 0 13.1 0H2.9C1 0 0 1.1 0 3.3v10.4C0 15.9 1 17 2.9 17h10.2c1.9 0 2.9-.8 2.9-2.6v-2.9l2.7-2.9c0-.1-2.7-2.5-2.7-2.5zm-4.5-.7c0-.5.3-.8.7-.8s.8.3.8.8v1.7l-.3 2.5c0 .3-.2.4-.4.4s-.4-.1-.4-.4l-.3-2.5V5.4zm-3.8 6.4c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V9.1C6.3 8.4 6 8 5.4 8c-.5 0-1 .4-1 1.2v2.6c0 .4-.1.8-.7.8s-.7-.4-.7-.8V5.4c0-.5.3-.8.7-.8.4 0 .7.3.7.8v2.1c.3-.4.7-.8 1.5-.8s1.7.5 1.7 2c.1.1.1 3.1.1 3.1zm2.5 0c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V7.5c0-.4.1-.8.7-.8.5 0 .7.4.7.8v4.3zm-.7-5.6c-.4 0-.7-.4-.7-.8s.3-.8.7-.8c.4 0 .7.4.7.8s-.3.8-.7.8zm2.8 6.3c-.4 0-.8-.4-.8-.9s.3-.9.8-.9.8.4.8.9-.4.9-.8.9z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>Chat</span>
+                        </div>
+                        <div class="icon">
+                            <div>
+                                <svg viewBox="0 0 19 16" width="40" height="35" fill="RGB(var(--purple))">
+                                    <path
+                                        d="M17.7 7.3c-.4-4.4-4-7.3-8.3-7.3-4.3 0-7.9 2.9-8.3 7.4C.5 7.4 0 8 0 8.6v5c0 .8.6 1.4 1.3 1.4H4c.2.4.8 1 1.2 1 .6 0 .8-1 .8-1.6V7.8c0-.5-.2-1.6-.8-1.6-.4 0-1 .8-1.2 1.1H2.9c.4-3.5 3.2-5.6 6.5-5.6s6.2 2.1 6.5 5.6H15c0-.3-.7-1.1-1.1-1.1-.6 0-.9 1-.9 1.6v6.6c0 .5.3 1.6.9 1.6.4 0 1.1-.6 1.2-1h2.6c.7 0 1.3-.6 1.3-1.3v-5c0-.8-.6-1.3-1.3-1.4zM3 8.5v1l-2 1.3V8.5h2zm15 .9l-2 1.3V8.5h2v.9zm-6.4.3l-1.6.5V6.4c0-.1-.1-.2-.2-.2s-.2 0-.2.1L7.2 12v.2c.1.1.1.1.2.1L9 12v3.8c0 .1-.2.2-.1.2h.3c.1 0 .2 0 .2-.1l2.4-5.9v-.2c-.1-.1-.2-.1-.2-.1z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>Audio</span>
+                        </div>
+                        <div class="icon">
+                            <div>
+                                <svg viewBox="0 0 16 15" width="40" height="35" fill="RGB(var(--pink))">
+                                    <path
+                                        d="M15.7 7.8c-.2-.1-.5 0-.6.1l-2.9 2.2c-.1.1-.1.1-.2.1V8H0v3h2v3.2c0 .4.3.8.8.8h8.4c.5 0 .8-.4.8-.8V12c0 .1.1.2.2.2l2.9 2.2c.2.2.4.2.6.1.2-.1.3-.3.3-.5V8.4c0-.2-.1-.5-.3-.6zM2.8 6.9c.3 0 .8.1 1.1.1h5.5c.3 0 .8-.1 1-.1 1.6-.3 2.8-1.7 2.8-3.4 0-1.9-1.6-3.5-3.5-3.5-1.2 0-2.4.6-3 1.7h-.1C5.9.6 4.8 0 3.6 0 1.6 0 0 1.6 0 3.5c0 1.7 1.2 3 2.8 3.4zM9 4.2c1 0 1.8-.8 1.8-1.8v-.3c.4.3.6.8.6 1.4 0 1-.8 1.8-1.8 1.8-.9 0-1.6-.6-1.8-1.5.3.3.7.4 1.2.4zm-6.2.1c1 0 1.8-.8 1.8-1.8v-.3c.4.2.6.7.6 1.3 0 1-.8 1.8-1.8 1.8-.9 0-1.6-.6-1.8-1.5.3.3.7.5 1.2.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>Video</span>
+                        </div>
+                    </div> -->
+                </div>
+
+
+                <!-- <div class="postiforward" ref="postiforward">
+                    <img src="assets/angle.png" alt="postiforward">
+                    <div class="post-container">
+                        <div>
+                            <span>Action</span>
+
+                            <i class="fas fa-ellipsis-h"></i>
+                        </div>
+                        <img src="assets/dash_post.jpg" alt="dash_post">
+
+
+                    </div>
+                </div> -->
+
+
+
+
+            </div>
+            <div class="project-text">
+
+                <h1> You already know <br> how this works.</h1>
+
+<div class="text-container">
+  <p>
+                    Once you follow a blog, all of its posts show up in <br> your dashboard, just like you’d expect. See
+                    <br> something great? Reblog it to your own blog. Add <br> commentary if you like. Make it your own.
+ 
+                </p>
+
+
+</div>
+              
+
+
+            </div>
+
+
+
+        </section>
+
+        <section id="media" ref="media" class="media">
+            <div class="media-icons">
+                <div class="media-icons-container">
+
+
+                    <div class="iconContainer">
+                        <div>
+                            <svg viewBox="0 0 20.8 13" width="32" height="32" fill="#ff8a00">
+                                <path
+                                    d="M.1 13h2.8l.9-3h4.7l.8 3h2.9L7.7 0h-3L.1 13zm6-10.1l2 5.1H4.2l1.9-5.1zM20 10V6c0-1.1-.2-1.9-1-2.3-.7-.5-1.7-.7-2.7-.7-1.6 0-2.7.4-3.4 1.2-.4.5-.6 1.2-.7 2h2.4c.1-.4.2-.6.4-.8.2-.3.6-.4 1.2-.4.5 0 .9.1 1.2.2.3.1.4.4.4.8 0 .3-.2.5-.5.7-.2.1-.5.2-1 .2l-.9.1c-1 .1-1.7.3-2.2.6-.9.5-1.4 1.3-1.4 2.5 0 .9.3 1.6.8 2 .6.5 1.3.9 2.2.9.7 0 1.2-.3 1.7-.6.4-.2.8-.6 1.2-.9 0 .2 0 .4.1.6 0 .2.1.8.2 1h2.7v-.8c-.1-.1-.3-.2-.4-.3.1-.3-.3-1.7-.3-2zm-2.2-1.1c0 .8-.3 1.4-.7 1.7-.4.3-1 .5-1.5.5-.3 0-.6-.1-.9-.3-.2-.2-.4-.5-.4-.9 0-.5.2-.8.6-1 .2-.1.6-.2 1.1-.3l.6-.1c.3-.1.5-.1.7-.2.2-.1.3-.1.5-.2v.8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Text</span>
+
+
+                    </div>
+                    <div class="iconContainer">
+                        <div>
+                            <svg viewBox="0 0 17 15" width="32" height="32" fill="#ff8a00">
+                                <path
+                                    d="M14.6 1h-2.7l-.6-1h-6l-.6 1H2.4C1.1 1 0 2 0 3.3v9.3C0 13.9 1.1 15 2.4 15h12.2c1.3 0 2.4-1.1 2.4-2.4V3.3C17 2 15.9 1 14.6 1zM8.3 13.1c-2.9 0-5.2-2.3-5.2-5.1s2.3-5.1 5.2-5.1c2.9 0 5.2 2.3 5.2 5.1s-2.3 5.1-5.2 5.1zm5.9-8.3c-.6 0-1.1-.5-1.1-1.1 0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1c0 .6-.5 1.1-1.1 1.1zm-10 3.1c0 1.2.5 2.2 1.3 3 0-.2 0-.4-.1-.6 0-2.2 1.8-4 4.1-4 1.1 0 2 .4 2.8 1.1-.3-2-2-3.4-4-3.4-2.2-.1-4.1 1.7-4.1 3.9z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Photo</span>
+                    </div>
+                    <div class="iconContainer">
+                        <div>
+                            <svg viewBox="0 0 17 13" width="32" height="32" fill="#ff8a00">
+                                <path
+                                    d="M3.5 5.5C4 3.7 5.8 2.4 7.2 1.3L5.9 0C3 1.8 0 5 0 8.5 0 11 1.3 13 4 13c2 0 3.7-1.5 3.7-3.6C7.7 7 6 5.5 3.5 5.5zm9.3 0c.4-1.8 2.2-3.1 3.7-4.2L15.2 0c-2.8 1.8-5.9 5-5.9 8.5 0 2.4 1.3 4.5 4 4.5 2 0 3.7-1.5 3.7-3.6 0-2.4-1.7-3.9-4.2-3.9z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Quote</span>
+                    </div>
+                    <div class="iconContainer">
+                        <div>
+                            <svg viewBox="0 0 17 17" width="32" height="32" fill="#ff8a00">
+                                <path
+                                    d="M9.9 5.1c-.2.3-.5 1.4-.6 2.6l1.1-.1c.7-.1 1.3-.3 1.5-.5.6-.6.6-1.4 0-2-.6-.5-1.4-.5-2 0zM8.5 0C3.8 0 0 3.8 0 8.5S3.8 17 8.5 17 17 13.2 17 8.5 13.2 0 8.5 0zm4.4 8.2c-.5.5-1.5.8-2.5.9l-1.2.2c-.1 1.3-.4 2.9-1 3.6-1.1 1.1-3 1.2-4.1 0-1.1-1.1-1.1-3 0-4.1.5-.5 1.5-.8 2.6-.9v1.5c-1.2.3-1.5.5-1.6.5-.6.6-.6 1.4 0 2 .5.5 1.4.5 2 0 .2-.2.5-1.1.6-2.5l.1-.9c0-1.3.2-3.6 1-4.4 1.1-1.1 3-1.2 4.1 0 1.2 1.1 1.2 2.9 0 4.1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Link</span>
+                    </div>
+                    <div class="iconContainer">
+                        <div>
+                            <svg viewBox="0 0 18.7 17" width="32" height="32" fill="#ff8a00">
+                                <path
+                                    d="M16 6.1V2.6C16 .8 15 0 13.1 0H2.9C1 0 0 1.1 0 3.3v10.4C0 15.9 1 17 2.9 17h10.2c1.9 0 2.9-.8 2.9-2.6v-2.9l2.7-2.9c0-.1-2.7-2.5-2.7-2.5zm-4.5-.7c0-.5.3-.8.7-.8s.8.3.8.8v1.7l-.3 2.5c0 .3-.2.4-.4.4s-.4-.1-.4-.4l-.3-2.5V5.4zm-3.8 6.4c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V9.1C6.3 8.4 6 8 5.4 8c-.5 0-1 .4-1 1.2v2.6c0 .4-.1.8-.7.8s-.7-.4-.7-.8V5.4c0-.5.3-.8.7-.8.4 0 .7.3.7.8v2.1c.3-.4.7-.8 1.5-.8s1.7.5 1.7 2c.1.1.1 3.1.1 3.1zm2.5 0c0 .4-.1.8-.7.8-.5 0-.7-.4-.7-.8V7.5c0-.4.1-.8.7-.8.5 0 .7.4.7.8v4.3zm-.7-5.6c-.4 0-.7-.4-.7-.8s.3-.8.7-.8c.4 0 .7.4.7.8s-.3.8-.7.8zm2.8 6.3c-.4 0-.8-.4-.8-.9s.3-.9.8-.9.8.4.8.9-.4.9-.8.9z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Chat</span>
+                    </div>
+                    <div class="iconContainer">
+                        <div>
+                            <svg viewBox="0 0 19 16" width="32" height="32" fill="#ff8a00">
+                                <path
+                                    d="M17.7 7.3c-.4-4.4-4-7.3-8.3-7.3-4.3 0-7.9 2.9-8.3 7.4C.5 7.4 0 8 0 8.6v5c0 .8.6 1.4 1.3 1.4H4c.2.4.8 1 1.2 1 .6 0 .8-1 .8-1.6V7.8c0-.5-.2-1.6-.8-1.6-.4 0-1 .8-1.2 1.1H2.9c.4-3.5 3.2-5.6 6.5-5.6s6.2 2.1 6.5 5.6H15c0-.3-.7-1.1-1.1-1.1-.6 0-.9 1-.9 1.6v6.6c0 .5.3 1.6.9 1.6.4 0 1.1-.6 1.2-1h2.6c.7 0 1.3-.6 1.3-1.3v-5c0-.8-.6-1.3-1.3-1.4zM3 8.5v1l-2 1.3V8.5h2zm15 .9l-2 1.3V8.5h2v.9zm-6.4.3l-1.6.5V6.4c0-.1-.1-.2-.2-.2s-.2 0-.2.1L7.2 12v.2c.1.1.1.1.2.1L9 12v3.8c0 .1-.2.2-.1.2h.3c.1 0 .2 0 .2-.1l2.4-5.9v-.2c-.1-.1-.2-.1-.2-.1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Audio</span>
+                    </div>
+                    <div class="iconContainer">
+                        <div>
+                            <svg viewBox="0 0 16 15" width="32" height="32" fill="#ff8a00">
+                                <path
+                                    d="M15.7 7.8c-.2-.1-.5 0-.6.1l-2.9 2.2c-.1.1-.1.1-.2.1V8H0v3h2v3.2c0 .4.3.8.8.8h8.4c.5 0 .8-.4.8-.8V12c0 .1.1.2.2.2l2.9 2.2c.2.2.4.2.6.1.2-.1.3-.3.3-.5V8.4c0-.2-.1-.5-.3-.6zM2.8 6.9c.3 0 .8.1 1.1.1h5.5c.3 0 .8-.1 1-.1 1.6-.3 2.8-1.7 2.8-3.4 0-1.9-1.6-3.5-3.5-3.5-1.2 0-2.4.6-3 1.7h-.1C5.9.6 4.8 0 3.6 0 1.6 0 0 1.6 0 3.5c0 1.7 1.2 3 2.8 3.4zM9 4.2c1 0 1.8-.8 1.8-1.8v-.3c.4.3.6.8.6 1.4 0 1-.8 1.8-1.8 1.8-.9 0-1.6-.6-1.8-1.5.3.3.7.4 1.2.4zm-6.2.1c1 0 1.8-.8 1.8-1.8v-.3c.4.2.6.7.6 1.3 0 1-.8 1.8-1.8 1.8-.9 0-1.6-.6-1.8-1.5.3.3.7.5 1.2.5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Video</span>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+            <div class="media-text">
+                <h1>Seriously, put anything <br> you want here.</h1>
+
+                <p>Seven post types to get you started. Your brain can do the rest. This thing <br> is yours. Use it
+                    however you like.</p>
+
+            </div>
+        </section>
+        <section id="footer" ref="footer" class="footer">
+
+            <div class="footer-login-contents">
+                <h1><a href="">Okay, it’s not actually hard to <br> explain.</a></h1>
+                <div>
+                    <p>We lied. But now you understand this thing. So come on in.</p>
+                </div>
+                <div class="link-tags">
+                    <a>Get Started</a>
+
+                    <a>Log in</a>
+                </div>
+                <p class="mt-3"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Here is what is Trending
+                </p>
+                <div class="store">
+                    <img src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2009-02-25&kind=iossoftware&bubble=ios_apps"
+                        alt="appleStore"><img
+                        src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                        alt="googlePlay">
+
+
+                </div>
+                <div class="footer-icon">
+                    <div><a href="#!"> Posted by {{postedBy[0].artistName}}
+                            <img :src='postedBy[0].artistAvatar' alt="avatar"></a></div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
