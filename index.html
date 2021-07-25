@@ -26,18 +26,17 @@
 
                 <div class="login-signup-btn">
 
-                    <a href="#!" class="btn  ">Log in</a> <a href="#!" class="btn mr-3 ml-3">Sign up</a>
+                    <a href="#!" class="btn  ">Resume</a> <a href="#footer" class="btn mr-3 ml-3">Contact</a>
 
                 </div>
             </div>
             <ul class="nav-indicator-container indicator-group" id="nav-indicator">
                 <li v-for="indicator in indicatorList" @click='activeIndicator(indicator)' class="indicator"
-                    :class="indicator.isActive"><a :href="indicator.id" :id='indicator.linkId'></a> </li>
+                    :class="indicator.isActive"><a :href="indicator.id" :id='indicator.linkId'></a> <span :style="handleActiveIndicator(indicator)" class="navtitle">{{indicator.title}}</span> </li>
 
             </ul>
         </nav>
         <section id="login" ref="login" class="login">
-
             <div id="intro-Container">
                 <p>Hi, My Name Is </p>
                 <h1>Uche Okoroafor.<br>I am a FrontEnd Web Developer</h1>
@@ -50,8 +49,8 @@
 
             <div class="about-tumblr">
                 <a href="#About">About Me?</a>
-            </div>
-
+            
+</div>
         </section>
 
 
@@ -242,7 +241,7 @@
         </section>
         <section id="Blogs" ref="Blogs">
             <div class="projects">
-                <h3>
+                <h3 ref="projectsText">
                     These are Some of My Works.</h3>
 
             </div>
@@ -525,9 +524,10 @@
 
 
         <section id="footer" ref="footer" class="footer">
+
             <div>
 
-                <h3>Interested in Knowing more about me?</h3>
+                <h3 class="footer-Text1" ref="footerText1">Interested in Knowing more about me?</h3>
             </div>
             <div class="footer-icons">
                 <div class="footer-icons-container">
@@ -594,7 +594,7 @@
             </div>
 
             <div>
-                <p>Feel free to visit my social media pages</p>
+                <p class="footer-text2" ref="footerText2">Feel free to visit my social media pages</p>
             </div>
 
 
