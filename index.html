@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Tumbir</title>
+    <title>My Portfolio</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,17 +26,18 @@
 
                 <div class="login-signup-btn">
 
-                    <a href="#!" class="btn  ">Resume</a> <a href="#footer" class="btn mr-3 ml-3">Contact</a>
+                    <a href="/assets/Resume/my resume.pdf" target="-blank" class="btn  ">Resume</a> <a href="#Footer" class="btn mr-3 ml-3">Contact</a>
 
                 </div>
             </div>
             <ul class="nav-indicator-container indicator-group" id="nav-indicator">
                 <li v-for="indicator in indicatorList" @click='activeIndicator(indicator)' class="indicator"
-                    :class="indicator.isActive"><a :href="indicator.id" :id='indicator.linkId'></a> <span :style="handleActiveIndicator(indicator)" class="navtitle">{{indicator.title}}</span> </li>
+                    :class="indicator.isActive"><a :href="indicator.id" :id='indicator.linkId'></a> <span
+                        :style="handleActiveIndicator(indicator)" class="navtitle">{{indicator.title}}</span> </li>
 
             </ul>
         </nav>
-        <section id="login" ref="login" class="login">
+        <section id="Intro" ref="login" class="login">
             <div id="intro-Container">
                 <p>Hi, My Name Is </p>
                 <h1>Uche Okoroafor.<br>I am a FrontEnd Web Developer</h1>
@@ -47,10 +48,10 @@
 
             </div>
 
-            <div class="about-tumblr">
+            <div class="about-me">
                 <a href="#About">About Me?</a>
-            
-</div>
+
+            </div>
         </section>
 
 
@@ -239,7 +240,7 @@
 
 
         </section>
-        <section id="Blogs" ref="Blogs">
+        <section id="Projects" ref="projects">
             <div class="projects">
                 <h3 ref="projectsText">
                     These are Some of My Works.</h3>
@@ -365,7 +366,7 @@
 
 
 
-        <section id="contactManager" ref="contactManager" class="contact-Manager">
+        <section id="ContactManager" ref="contactManager" class="contact-Manager">
 
             <div class="contact-manager-text project" ref="contactManagerText">
 
@@ -417,7 +418,7 @@
         </section>
 
 
-        <section id="Memory-Game" ref="MemoryGame" class="Memory-Game">
+        <section id="MemoryGame" ref="memoryGame" class="Memory-Game">
 
             <div class="Memory-Game-img">
 
@@ -469,7 +470,7 @@
         </section>
 
 
-        <section id="tumblrclone" ref="tumblrclone" class="tumblr-clone">
+        <section id="TumblrcClone" ref="tumblrClone" class="tumblr-clone">
 
             <!-- <div class="fillup" ref="fillup"></div> -->
 
@@ -523,7 +524,7 @@
         </section>
 
 
-        <section id="footer" ref="footer" class="footer">
+        <section id="Footer" ref="footer" class="footer">
 
             <div>
 
