@@ -26,9 +26,31 @@
 
                 <div class="login-signup-btn">
 
-                    <a href="/assets/Resume/my resume.pdf" target="-blank" class="btn  ">Resume</a> <a href="#Footer" class="btn mr-3 ml-3">Contact</a>
+                    <a href="/assets/Resume/my resume.pdf" target="-blank" class="btn  ">Resume</a> <a href="#Footer"
+                        class="btn mr-3 ml-3">Contact</a>
 
                 </div>
+                <div class="menu-icon pr-3">
+                    <i class="fa fa-2x fa-bars" v-if="!menuBarOpen" @click="handleMenuBar('open')"
+                        aria-hidden="true"></i>
+                    <i class="fa fa-times fa-2x" v-if="menuBarOpen" @click="handleMenuBar('close')" class="close-Menu"
+                        aria-hidden="true"></i>
+                    <div class="menu-container" @click="handleMenuBar('close')"   ref="menuContainer">
+                        <ul>
+                            <li>Intro</li>
+                            <li>About</li>
+                            <li>Projects</li>
+                            <li>Project 1</li>
+                            <li>Project 3</li>
+                            <li>Project 2</li>
+                            <li>Project 4</li>
+                            <li>Contact</li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="backDrop" v-if="menuBarOpen" @click="handleMenuBar()"></div>
             </div>
             <ul class="nav-indicator-container indicator-group" id="nav-indicator">
                 <li v-for="indicator in indicatorList" @click='activeIndicator(indicator)' class="indicator"
