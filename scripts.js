@@ -2,164 +2,38 @@ const Container = Vue.createApp({
   data() {
     return {
       indicatorList: [
-        { isActive: "activeindicator", id: "#login", linkId: "0" },
-        { isActive: false, id: "#About", linkId: "1" },
-        { isActive: false, id: "#Blogs", linkId: "2" },
-        { isActive: false, id: "#Somedia", linkId: "3" },
-        { isActive: false, id: "#contactManager", linkId: "4" },
-        { isActive: false, id: "#Memory-Game", linkId: "5" },
-        { isActive: false, id: "#tumblrclone", linkId: "6" },
-        { isActive: false, id: "#footer", linkId: "7" },
+        {
+          isActive: "activeindicator",
+          id: "#Intro",
+          title: "Intro",
+          linkId: "0",
+        },
+        { isActive: false, id: "#About", title: "About", linkId: "1" },
+        { isActive: false, id: "#Projects", title: "Projects", linkId: "2" },
+        { isActive: false, id: "#Somedia", title: "Project 1", linkId: "3" },
+        {
+          isActive: false,
+          id: "#ContactManager",
+          title: "Project 2",
+          linkId: "4",
+        },
+        { isActive: false, id: "#MemoryGame", title: "Project 3", linkId: "5" },
+        {
+          isActive: false,
+          id: "#TumblrcClone",
+          title: "Project 4",
+          linkId: "6",
+        },
+        { isActive: false, id: "#Footer", title: "Contact", linkId: "7" },
       ],
-
-      blogs: [
-        {
-          name: "kenta-nikki",
-          url: "assets/background-image/kenta-nikki.jpg",
-          avatar: "assets/avatar/kenta-nikki.jpg",
-          notes: 2500,
-        },
-        {
-          name: "bethfuller",
-          url: "assets/background-image/bethfuller.png",
-          avatar: "assets/avatar/bethfuller.jpg",
-          notes: 2500,
-        },
-        {
-          name: "artbylittlebug",
-          url: "assets/background-image/artbylittlebug.jpg",
-          avatar: "assets/avatar/artbylittlebug.jpg",
-          notes: 2500,
-        },
-        {
-          name: "instantreigen",
-          url: "assets/background-image/instantreigen.jpg",
-          avatar: "assets/avatar/instantreigen.jpg",
-          notes: 2500,
-        },
-        {
-          name: "Kpop",
-          url: "assets/background-image/Kpop.jpg",
-          avatar: "assets/avatar/Kpop.jpg",
-          notes: 2500,
-        },
-        {
-          name: "mathildejr",
-          url: "assets/background-image/mathildejr.jpg",
-          avatar: "assets/avatar/mathildejr.jpg",
-          notes: 2500,
-        },
-        {
-          name: "nooskadraws",
-          url: "assets/background-image/nooskadraws.jpg",
-          avatar: "assets/avatar/nooskadraws.jpg",
-          notes: 2500,
-        },
-        {
-          name: "onurilter",
-          url: "assets/background-image/onurilter.jpg",
-          avatar: "assets/avatar/onurilter.png",
-          notes: 2500,
-        },
-        {
-          name: "tvoom",
-          url: "assets/background-image/tvoom.jpg",
-          avatar: "assets/avatar/tvoom.jpg",
-          notes: 2500,
-        },
-        {
-          name: "terahsvent",
-          url: "assets/background-image/terahsvent.jpg",
-          avatar: "assets/avatar/terahsvent.jpg",
-          notes: 2500,
-        },
-        {
-          name: "michellekingdom",
-          url: "assets/background-image/michellekingdom.jpg",
-          avatar: "assets/avatar/michellekingdom.jpg",
-          notes: 2500,
-        },
-        {
-          name: "artofmaquenda",
-          url: "assets/background-image/artofmaquenda.gif",
-          avatar: "assets/avatar/artofmaquenda.jpg",
-          notes: 2500,
-        },
-        {
-          name: "outerspacebih",
-          url: "assets/background-image/outerspacebih.jpg",
-          avatar: "assets/avatar/outerspacebih.jpg",
-          notes: 2500,
-        },
-      ],
-      blogsArts: [
-        {
-          name: "sleepyseaslug",
-          artUrl: "assets/Arts/sleepyseaslug.webp",
-          avatar: "assets/avatar/sleepyseaslug.jpg",
-          notes: 2500,
-        },
-        {
-          name: "blatpolana",
-          artUrl: "assets/Arts/blatpolana.jpg",
-          avatar: "assets/avatar/blatpolana.jpg",
-          notes: 2500,
-        },
-        {
-          name: "daniellechenettedraws",
-          artUrl: "assets/Arts/daniellechenettedraws.webp",
-          avatar: "assets/avatar/daniellechenettedraws.jpg",
-          notes: 2500,
-        },
-        {
-          name: "bcbae",
-          artUrl: "assets/Arts/bcbae.jpg",
-          avatar: "assets/avatar/bcbae.jpg",
-          notes: 2500,
-        },
-        {
-          name: "michellekingdom",
-          artUrl: "assets/Arts/michellekingdom.jpg",
-          avatar: "assets/avatar/michellekingdom.jpg",
-          notes: 2500,
-        },
-        {
-          name: "nooskadraws",
-          artUrl: "assets/Arts/nooskadraws.jpg",
-          avatar: "assets/avatar/nooskadraws.jpg",
-          notes: 2500,
-        },
-        {
-          name: "onurilter",
-          artUrl: "assets/Arts/onurilter.jpg",
-          avatar: "assets/avatar/onurilter.png",
-          notes: 2500,
-        },
-        {
-          name: "artbylittlebug",
-          artUrl: "assets/Arts/artbylittle.jpg",
-          avatar: "assets/avatar/artbylittlebug.jpg",
-          notes: 2500,
-        },
-        {
-          name: "mathildejr",
-          artUrl: "assets/Arts/mathildejr.jpg",
-          avatar: "assets/avatar/mathildejr.jpg",
-          notes: 2500,
-        },
-        {
-          name: "instantreigen",
-          artUrl: "assets/Arts/instantreigen.jpg",
-          avatar: "assets/avatar/instantreigen.jpg",
-          notes: 2500,
-        },
-      ],
+      backgrounds: [{ url: "/assets/background-image/background1.webp" }],
       postedBy: [
         {
           artistName: "user",
           artistAvatar: "avatar",
         },
       ],
+      menuBarOpen: false,
     };
   },
 
@@ -167,29 +41,31 @@ const Container = Vue.createApp({
     document
       .getElementById("container")
       .addEventListener("scroll", () => this.onScroll(this.$refs));
-    // this.handleBackgroundImage(this.blogs)
+    this.handleBackgroundImage(this.backgrounds);
   },
   beforeUnmount() {
     document
       .getElementById("container")
       .removeEventListener("scroll", () => this.onScroll(this.$refs));
+    this.handleBackgroundImage(this.backgrounds);
   },
 
   methods: {
     onScroll(ref) {
+// console.log(document.getElementById('indicator.linkId'));
       this.isElementInViewport(ref.login) &&
         this.activeIndicator(this.indicatorList[0]);
       this.isElementInViewport(ref.About) &&
         this.activeIndicator(this.indicatorList[1]);
-      this.isElementInViewport(ref.Blogs) &&
+      this.isElementInViewport(ref.projects) &&
         this.activeIndicator(this.indicatorList[2]);
       this.isElementInViewport(ref.Somedia) &&
         this.activeIndicator(this.indicatorList[3]);
       this.isElementInViewport(ref.contactManager) &&
         this.activeIndicator(this.indicatorList[4]);
-      this.isElementInViewport(ref.MemoryGame) &&
+      this.isElementInViewport(ref.memoryGame) &&
         this.activeIndicator(this.indicatorList[5]);
-      this.isElementInViewport(ref.tumblrclone) &&
+      this.isElementInViewport(ref.tumblrClone) &&
         this.activeIndicator(this.indicatorList[6]);
       this.isElementInViewport(ref.footer) &&
         this.activeIndicator(this.indicatorList[7]);
@@ -208,61 +84,119 @@ const Container = Vue.createApp({
     },
 
     activeIndicator(indicator) {
-      this.indicatorList.forEach((indicator) => {
-        indicator.isActive = false;
+      this.indicatorList.forEach((indicatorIndex) => {
+        if (indicatorIndex.title === indicator.title) {
+          indicatorIndex.isActive = "activeindicator";
+        } else {
+          indicatorIndex.isActive = false;
+        }
       });
-      indicator.isActive = "activeindicator";
-      this.iconsShow(this.indicatorList);
-      this.showBlogs(this.indicatorList);
+      document.getElementById(indicator.linkId).click();
+this.introDisplay(this.indicatorList);
+      this.displayAboutMe(this.indicatorList);
+      this.showProjects(this.indicatorList);
       this.handleSoMediaDisplay(this.indicatorList);
       this.handleContactManagerDisplay(this.indicatorList);
       this.handleMemoryGameDisplay(this.indicatorList);
       this.handleTumblrDisplay(this.indicatorList);
-
       this.handleMediaIconPop(this.indicatorList);
+    },
+
+    handleActiveIndicator(indicator) {
+      if (!indicator.isActive) {
+        return "";
+      }
+
+      return "display:inline;opacity:1;text-shadow: -4px 3px 3px rgba(0, 0, 0, 0.43);";
+      // "color:#00cf35"
     },
 
     handleSearchInput() {
       document.getElementsByClassName("searchInput").style =
         "background-color: rgba(253, 254, 255,1);";
-      console.log(document.getElementsByClassName("searchInput"));
     },
 
-    iconsShow(indicator) {
-      if (indicator[1].isActive.length) {
-        this.$refs.photoBig.style =
-          "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;right:61%;bottom:42%; ";
+    introDisplay(indicator) {
+console.log("ran");
+ let timer = 0;
+      if (indicator[0].isActive.length) {
 
-        this.$refs.text1.style =
-          "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;bottom: 68%;right:11.10%;";
 
         setTimeout(() => {
-          this.$refs.text2.style =
-            "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;bottom: 44%;right:11.10%;";
-        }, 200);
-        setTimeout(() => {
-          this.$refs.text3.style =
-            "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;bottom: 34%;right:10%;";
-        }, 400);
-        setTimeout(() => {
-          this.$refs.text4.style =
-            "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;bottom: 10%;right:52%;";
+      document.querySelectorAll(".display-Intro-Text").forEach(element => {
+   setTimeout(() => {
+          element.style =
+            "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1s;padding-top:0;";
+        },(timer += 200));
+});
+
         }, 800);
+
       } else {
-        this.$refs.photoBig.style = "opacity:0;right:120%;bottom:45%;";
-        this.$refs.text1.style = "opacity:0;bottom: 68%;right:-50%;";
-        this.$refs.text2.style = "opacity:0;bottom: 44%;right:-50%;";
-        this.$refs.text3.style = "opacity:0;bottom:-50%;right:10%;";
-        this.$refs.text4.style = "opacity:0;bottom:-50%;right:52%;";
+
+document.querySelectorAll(".display-Intro-Text").forEach(element => {
+          element.style = "opacity:0;padding-top:5rem;";
+
+});
+
       }
     },
 
-    showBlogs(indicator) {
+
+
+
+    displayAboutMe(indicator) {
+ let timer = 0;
+      if (indicator[1].isActive.length) {
+        this.$refs.photoBig.style =
+          "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;right:0% ";
+
+
+
+    
+
+        setTimeout(() => {
+      document.querySelectorAll(".display-text").forEach(element => {
+  //  setTimeout(() => {
+  //         element.style =
+  //           "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1s;padding-top:0;";
+  //       },(timer += 200));
+
+  setTimeout(() => {
+          element.style =
+            "opacity:1;transition: ease-in 1s;";
+        },300);
+
+});
+
+        }, 800);
+
+      } else {
+        this.$refs.photoBig.style = "opacity:0;right:120%;padding-top:0rem;";
+        // this.$refs.text1.style = "opacity:0;bottom: 68%;right:-50%;";
+        // this.$refs.text2.style = "opacity:0;bottom: 44%;right:-50%;";
+        // this.$refs.text3.style = "opacity:0;bottom:-50%;right:10%;";
+        // this.$refs.text4.style = "opacity:0;bottom:-50%;right:52%;";
+// document.querySelectorAll(".display-text").forEach(element => {
+//           element.style = "opacity:0;padding-top:5rem;";
+
+// });
+
+document.querySelectorAll(".display-text").forEach(element => {
+          element.style = "opacity:0;padding-top:0rem;";
+
+});
+
+
+      }
+    },
+
+    showProjects(indicator) {
       this.$refs.hoverControl.style = "display:block";
-      this.$refs.Blog.style = "display:flex";
+      this.$refs.projectsContainer.style = "display:flex";
       setTimeout(() => {
         if (indicator[2].isActive.length) {
-          this.$refs.Blog.style =
+          this.$refs.projectsContainer.style =
             "margin-top:0rem;transition:cubic-bezier(.165,.84,.44,1) 1s";
           this.$refs.img1.style =
             "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;";
@@ -280,19 +214,38 @@ const Container = Vue.createApp({
             this.$refs.img4.style =
               "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;left: 15%;top:260%;";
           }, 800);
+          setTimeout(() => {
+            this.$refs.img2Mobileview.style =
+              "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;left: auto;top: 150%;";
+          }, 300);
 
+          setTimeout(() => {
+            this.$refs.img3Mobileview.style =
+              "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;left: auto;top:210%;";
+          }, 600);
+          setTimeout(() => {
+            this.$refs.img4Mobileview.style =
+              "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;left: auto;top:260%;";
+          }, 800);
+          setTimeout(() => {
+            this.$refs.projectsText.style = "opacity:1;transition: opacity 2s";
+          }, 1500);
           setTimeout(() => {
             this.$refs.hoverControl.style = "display:none";
           }, 2000);
         } else {
-          this.$refs.Blog.style = "margin-top:20rem";
+          this.$refs.projectsContainer.style = "margin-top:20rem";
           this.$refs.img1.style = "opacity:0;bottom: 68%;right:-50%;";
           this.$refs.img2.style = "opacity:0;left:100%";
           this.$refs.img3.style = "opacity:0;left:100%";
           this.$refs.img4.style = "opacity:0;left:100%";
+         this.$refs.img2Mobileview.style = "opacity:0;left:100%";
+          this.$refs.img3Mobileview.style = "opacity:0;left:100%";
+          this.$refs.img4Mobileview.style = "opacity:0;left:100%";
           this.$refs.hoverControl.style = "display:block";
+          this.$refs.projectsText.style = "opacity:0";
           setTimeout(() => {
-            this.$refs.Blog.style = "display:none";
+            this.$refs.projectsContainer.style = "display:none";
           }, 100);
         }
       }, 500);
@@ -406,27 +359,86 @@ const Container = Vue.createApp({
               "opacity:1;transform:scale(1,1);transition: transform 1s cubic-bezier(.165,.84,.44,1);";
           }, (timer += 150));
         });
+        setTimeout(() => {
+          this.$refs.footerText1.style = "opacity:1;transition: opacity 1.5s";
+          setTimeout(() => {
+            this.$refs.footerText2.style = "opacity:1;transition: opacity 1.5s";
+          }, 700);
+        }, 1500);
       } else {
         document.querySelectorAll(".iconContainer").forEach((icon) => {
           icon.style = "opacity:0;transform:scale(0.5,0.5)";
         });
+        this.$refs.footerText1.style = "opacity:0";
+        this.$refs.footerText2.style = "opacity:0";
       }
     },
 
-    handleBackgroundImage(blogs) {
-      let num = Math.floor(Math.random() * blogs.length);
-      this.$refs.login.style = "background-image:url(" + blogs[num].url + ")";
-      this.$refs.footer.style = "background-image:url(" + blogs[num].url + ")";
-      this.postedBy[0].artistAvatar = blogs[num].avatar;
-      this.postedBy[0].artistName = blogs[num].name;
+    handleBackgroundImage(backgrounds) {
+this.introDisplay(this.indicatorList);
+
+      let num = Math.floor(Math.random() * backgrounds.length);
+      this.$refs.login.style =
+        "background-image: linear-gradient( 115deg, rgba(0, 25, 53, 0.9), rgba(0, 25, 53, 0.9) ), url(" +
+        backgrounds[num].url +
+        ")";
+
+      // background-image: linear-gradient( 115deg, rgba(0, 25, 53, 0.9), rgba(0, 25, 53, 0.9) ), url("https://i.guim.co.uk/img/media/2abe5a9bee5769168843fc873d39aa2696a7cc0d/0_139_4467_2681/master/4467.jpg?width=1920&quality=85&auto=format&fit=max&s=a8c43e81775114404286ffd675453f7f");
+
+      this.$refs.footer.style =
+        "background-image: linear-gradient( 115deg, rgba(0, 25, 53, 0.9), rgba(0, 25, 53, 0.9) ), url(" +
+        backgrounds[num].url +
+        ")";
+      // this.postedBy[0].artistAvatar = backgrounds[num].avatar;
+      // this.postedBy[0].artistName = backgrounds[num].name;
       setInterval(() => {
-        let num = Math.floor(Math.random() * blogs.length);
-        this.$refs.login.style = "background-image:url(" + blogs[num].url + ")";
+        let num = Math.floor(Math.random() * backgrounds.length);
+        this.$refs.login.style =
+          "background-image: linear-gradient( 115deg, rgba(0, 25, 53, 0.9), rgba(0, 25, 53, 0.9) ), url(" +
+          backgrounds[num].url +
+          ")";
         this.$refs.footer.style =
-          "background-image:url(" + blogs[num].url + ")";
-        this.postedBy[0].artistAvatar = blogs[num].avatar;
-        this.postedBy[0].artistName = blogs[num].name;
+          "background-image: linear-gradient( 115deg, rgba(0, 25, 53, 0.9), rgba(0, 25, 53, 0.9) ), url(" +
+          backgrounds[num].url +
+          ")";
+        // this.postedBy[0].artistAvatar = backgrounds[num].avatar;
+        // this.postedBy[0].artistName = backgrounds[num].name;
       }, 10000);
+    },
+    handleMenuBar(params) {
+      let timer = 0;
+      if (params === "open") {
+        this.$refs.menuContainer.style =
+          " width: min(75vw, 400px);transition: width 1s cubic-bezier(.165,.84,.44,1);padding:20px;";
+        setTimeout(() => {
+          document.querySelectorAll(".menu-contents").forEach((content) => {
+            setTimeout(() => {
+              content.style =
+                "margin-left:0;transition: all 1s cubic-bezier(.165,.84,.44,1)";
+            }, (timer += 150));
+          });
+
+          //  for(let content in  document.getElementsByClassName("menu-contents")){
+
+          // setTimeout(() => {
+          //      document.getElementsByClassName("menu-contents")[content].style="margin-left:0;transition: all 1s cubic-bezier(.165,.84,.44,1)";
+
+          // }, 1000);
+          //   }
+        }, 100);
+        this.menuBarOpen = true;
+      } else {
+        this.$refs.menuContainer.style =
+          "width:0%;transition: width 0.5s cubic-bezier(.165,.84,.44,1);";
+        this.menuBarOpen = false;
+
+        document.querySelectorAll(".menu-contents").forEach((content) => {
+          setTimeout(() => {
+            content.style =
+              "margin-left:150%;transition: all 1s cubic-bezier(.165,.84,.44,1)";
+          }, (timer += 150));
+        });
+      }
     },
   },
 });
