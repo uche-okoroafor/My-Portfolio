@@ -34,6 +34,7 @@ const Container = Vue.createApp({
         },
       ],
       menuBarOpen: false,
+zero:100,
     };
   },
 
@@ -52,7 +53,17 @@ const Container = Vue.createApp({
 
   methods: {
     onScroll(ref) {
-      // console.log(document.getElementById('indicator.linkId'));
+if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 100){
+console.log("yes");
+
+this.zero=document.body.scrollTop
+}else{
+
+console.log("no");
+}
+
+
+
       this.isElementInViewport(ref.login) &&
         this.activeIndicator(this.indicatorList[0]);
       this.isElementInViewport(ref.About) &&
