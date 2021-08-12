@@ -774,143 +774,7 @@ strong {
   justify-content: space-between;
 }
 
-.icons {
-  height: 67vh;
-}
-.icons .Tumblr {
-  position: absolute;
-  font-size: 8rem;
-  right: 47%;
-  bottom: 50%;
-  color: var(--green);
-  -webkit-text-stroke: 5px var(--white);
-  opacity: 0;
-}
 
-.icons i[class*="fas"],
-.icons svg {
-  color: var(--green);
-  -webkit-text-stroke: 5px var(--green-line);
-  position: absolute;
-  opacity: 0;
-}
-
-.icons .fa-plus {
-  font-size: 2.5rem;
-  right: 0;
-  bottom: 56.5%;
-  border-radius: 0px;
-}
-
-.icons .fa-plus2 {
-  font-size: 2.5rem;
-  right: 0;
-  bottom: 90%;
-  border-radius: 0px;
-}
-
-.icons .fa-plus-big {
-  font-size: 4rem;
-  right: 100%;
-  bottom: 0;
-}
-
-.icons .fa-heart-small {
-  font-size: 3rem;
-  right: 100%;
-  bottom: 0%;
-}
-
-.icons .fa-heart-big {
-  font-size: 3.5rem;
-  right: 50%;
-  bottom: 100%;
-}
-.icons .fa-heart-smaller {
-  font-size: 2rem;
-  right: 100%;
-  bottom: 37%;
-}
-
-.icons .text-big {
-  right: 0%;
-  bottom: 80%;
-}
-
-.icons .video-big {
-  right: 0%;
-  bottom: 100%;
-}
-
-.icons .video-bigg {
-  right: 120%;
-  bottom: 100%;
-}
-
-.icons .photo-small {
-  right: 30%;
-  bottom: 0;
-}
-
-.icons .photo-big {
-  right: 120%;
-  bottom: 70%;
-}
-
-.icons .headphone-small {
-  right: 10%;
-  bottom: 0;
-}
-
-.icons .headPhone {
-  right: 100%;
-  bottom: 100%;
-}
-
-.icons .link-small {
-  right: 120%;
-  font-size: 5rem;
-}
-
-.icons .link-big {
-  right: 20%;
-  bottom: 100%;
-  font-size: 6rem;
-}
-
-.icons .quote-one {
-  right: 0%;
-  transform: rotate(180deg);
-}
-
-.icons .quote-two {
-  right: 120%;
-}
-
-.icons .chat-big {
-  right: 0;
-  bottom: 59%;
-  transform: rotate(0.5turn);
-}
-
-.icons .chat-bigger {
-  bottom: 120%;
-}
-.icons .chat-biggest {
-  right: 120%;
-  bottom: 0;
-}
-.icons .retweet-big {
-  right: 60%;
-  bottom: 100%;
-  font-size: 5rem;
-}
-
-.icons .retweet-small {
-  right: 35%;
-  bottom: 0;
-  font-size: 4rem;
-}
 
 .about-text {
   margin: 0 auto;
@@ -1448,36 +1312,38 @@ align-items: center; */
   background-color: var(--project4);
 }
 
-.image-box img,.image-box-mobile img {
+.image-box img {
   max-width: 750px;
   border-radius: 5px;
   box-shadow: -7px 6px 5px 0px rgba(0, 0, 0, 0.5);
   transition: all 0.5s;
   cursor: pointer;
 }
+.image-box-mobile img{
+width: 100% !important;
+background-color: yellow;
+  border-radius: 5px;
+  box-shadow: -7px 6px 5px 0px rgba(0, 0, 0, 0.5);
+  transition:all 0.2s;
+  cursor: pointer;
+visibility: hidden;
+}
 
 .project-text-mobile{
-  background-image: linear-gradient(
-      115deg,
-      rgba(20, 33, 45, 0.9),
-      rgba(20, 33, 45, 0.9)
-    ),
-    url("assets/images/somedia2.jpg");
-background-repeat: no-repeat;
-background-size: cover;
-padding-top: 5rem!important;
+/* padding-top: 5rem!important; */
 /* bottom: 5rem; */
 width:100% ;
 margin: 0 auto;
 height: 80vh;
 margin-top: 4rem;
-padding: 0 2rem;
+/* padding: 0 2rem; */
 display: none;
 border-radius: 5px;
 }
 @media only screen and (max-width:1140px) {
 .project-text-mobile{
 display: block;
+
 }  
 }
 
@@ -1485,7 +1351,7 @@ display: block;
 
 @media only screen and (max-width:700px) {
 .project-text-mobile{
-padding-top: 2rem!important;
+/* padding-top: 2rem!important; */
 }  
 }
 
@@ -1493,7 +1359,7 @@ padding-top: 2rem!important;
 .project-text-mobile{
 padding: 0 1rem !important;
 margin-top: 4rem!important;
-padding-top: 4rem!important;
+/* padding-top: 4rem!important; */
 
 }  
 }
@@ -1503,7 +1369,7 @@ padding-top: 4rem!important;
 @media only screen and (max-width:370px) {
 .project-text-mobile{
 
-padding-top: 4rem!important;
+/* padding-top: 4rem!important; */
 }  
 }
 
@@ -1513,6 +1379,15 @@ padding-top: 4rem!important;
 display: none;
 }
 
+.image-box-mobile:hover img{
+
+visibility: visible;
+ transform: scale(1.09, 1.09);
+  box-shadow: -7px 6px 5px 0px rgba(0, 0, 0, 0.7);
+  transition: all 1s;
+z-index: 200;
+position: relative;
+}
 
 @media only screen and (max-width:1254px) {
 .image-box img {
@@ -1536,6 +1411,16 @@ display: none;
 
 display: block;
 margin: 0 auto;
+  background-image: linear-gradient(
+      115deg,
+      rgba(20, 33, 45, 0.9),
+      rgba(20, 33, 45, 0.9)
+    ),
+    url("./assets/images/somedia2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain;
+border-radius: 5px;
 }
 
  }/*
@@ -1546,6 +1431,12 @@ margin: 0 auto;
 }  
 
 } */
+
+.text-container-mobile{
+margin-top: -25%;
+position: relative;
+z-index: 50;
+}
 
 
 
@@ -1588,12 +1479,18 @@ display: none;
 
 
 .project-text {
-  padding-top: 9rem;
+ 
   color: var(--white);
   position: relative;
   font-size: 1.1rem;
   /* margin-left: 50rem;
   opacity: 0; */
+}
+@media only screen and (max-width:1140px) {
+.project-text{
+ padding-top: 3rem;
+
+}  
 }
 
 .Memory-Game .project-text,
@@ -1604,6 +1501,12 @@ display: none;
 .Somedia .project-text,
 .MemoryGame .project-text {
   padding-top: 8rem;
+}
+@media only screen and (max-width:1140px) {
+  .Somedia .project-text,
+.MemoryGame .project-text {
+  padding-top: 2rem;
+}
 }
 
 .contact-manager-text,
