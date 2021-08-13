@@ -34,7 +34,7 @@ const Container = Vue.createApp({
         },
       ],
       menuBarOpen: false,
-zero:100,
+      zero: 100,
     };
   },
 
@@ -53,16 +53,16 @@ zero:100,
 
   methods: {
     onScroll(ref) {
-if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 100){
-console.log("yes");
+      if (
+        document.body.scrollTop > 1000 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        console.log("yes");
 
-this.zero=document.body.scrollTop
-}else{
-
-console.log("no");
-}
-
-
+        this.zero = document.body.scrollTop;
+      } else {
+        console.log("no");
+      }
 
       this.isElementInViewport(ref.login) &&
         this.activeIndicator(this.indicatorList[0]);
@@ -103,14 +103,12 @@ console.log("no");
         }
       });
 
+      // document.querySelectorAll(".menu-contents")[0].classList.add("addBackground")
 
-// document.querySelectorAll(".menu-contents")[0].classList.add("addBackground")
-
-
- document.querySelectorAll(".menu-contents").forEach((element) => {
+      document.querySelectorAll(".menu-contents").forEach((element) => {
         if (element.innerHTML === indicator.title) {
           // console.log(element.innerHTML, indicator.title);
-          element.classList.add("addBackground")
+          element.classList.add("addBackground");
         } else {
           // console.log(element.innerHTML, indicator.title);
 
@@ -127,8 +125,6 @@ console.log("no");
       this.handleMemoryGameDisplay(this.indicatorList);
       this.handleTumblrDisplay(this.indicatorList);
       this.handleMediaIconPop(this.indicatorList);
-
-     
     },
 
     handleActiveIndicator(indicator) {
@@ -186,13 +182,6 @@ console.log("no");
       } else {
         this.$refs.photoBig.style = "opacity:0;right:120%;padding-top:0rem;";
         // this.$refs.text1.style = "opacity:0;bottom: 68%;right:-50%;";
-        // this.$refs.text2.style = "opacity:0;bottom: 44%;right:-50%;";
-        // this.$refs.text3.style = "opacity:0;bottom:-50%;right:10%;";
-        // this.$refs.text4.style = "opacity:0;bottom:-50%;right:52%;";
-        // document.querySelectorAll(".display-text").forEach(element => {
-        //           element.style = "opacity:0;padding-top:5rem;";
-
-        // });
 
         document.querySelectorAll(".display-text").forEach((element) => {
           element.style = "opacity:0;padding-top:0rem;";
@@ -260,31 +249,6 @@ console.log("no");
       }, 500);
     },
 
-    handleLoadingDots(clearInterVal) {
-      const interVal = setInterval(() => {
-        this.$refs.loadOne.style =
-          " transform: scale(1,1.5);background-color:#b2b7c5;transition: all  0.5s";
-        setTimeout(() => {
-          this.$refs.loadTwo.style =
-            "transform: scale(1,1.5);background-color:#b2b7c5;transition: all 0.5s";
-        }, 125);
-        this.$refs.loadThree.style =
-          "transform: scale(1,1);background-color:#ffffff;transition: all 0.5s";
-        setTimeout(() => {
-          this.$refs.loadOne.style =
-            "transform: scale(1,1);background-color:#ffffff;transition: all  0.5s";
-          setTimeout(() => {
-            this.$refs.loadTwo.style =
-              "transform: scale(1,1);background-color:#ffffff;transition: all  0.5s";
-          }, 125);
-          this.$refs.loadThree.style =
-            "transform: scale(1,1.5);background-color:#b2b7c5;transition: all  0.5s";
-        }, 250);
-      }, 500);
-
-      clearInterVal && clearInterval(interVal);
-    },
-
     handleSoMediaDisplay(indicator) {
       if (indicator[3].isActive.length) {
         this.$refs.SomediaImg.style =
@@ -295,28 +259,40 @@ console.log("no");
           this.$refs.SomediaImg.style =
             "margin-left:0;margin-right:0rem;opacity:1 ;transition: all ease-out 0.7s";
         }, 700);
+        // console.log(document.querySelectorAll(".somedia-Text-Mobile"));
+        setTimeout(() => {
+          document.querySelector("#Somedia .image-box-mobile").style =
+            "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/somedia2.jpg');";
+          // document.querySelector("#Somedia .image-box-mobile img").style =
+          //   "visibility:visible;transition: all ease-out 0.7s";
+        }, 500);
 
-// console.log(document.querySelectorAll(".somedia-Text-Mobile"));
+        setTimeout(() => {
+          document
+            .querySelectorAll(".somedia-Text-Mobile")
+            .forEach((element) => {
+              element.style = "opacity:1;transition: all ease-out 1s";
+            });
 
-setTimeout(() => {
-  document.querySelectorAll(".somedia-Text-Mobile").forEach(element => {
-  element.style="opacity:1;transition: all ease-out 0.7s"
-});
-}, 1000);
+        }, 1200);
+
+        setTimeout(() => {
+          document.querySelector("#Somedia .image-box-mobile").style =
+            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/somedia2.jpg');";        
+}, 2000);
       } else {
         this.$refs.SomediaImg.style =
           "margin-top:40rem; margin-left:-50rem;opacity:0;margin-right:50rem;";
         this.$refs.somediaText.style =
           "opacity:0 ;margin-left:50rem;margin-right:-50rem";
 
-  document.querySelectorAll(".somedia-Text-Mobile").forEach(element => {
-  element.style="opacity:0;transition: all ease-out 0.7s"
-});
+        document.querySelector("#Somedia .image-box-mobile").style =
+          "opacity:0;";
 
+        document.querySelectorAll(".somedia-Text-Mobile").forEach((element) => {
+          element.style = "opacity:0";
+        });
       }
-
-
-
     },
 
     handleContactManagerDisplay(indicator) {
@@ -331,19 +307,35 @@ setTimeout(() => {
             "opacity:1 ;margin-left:0;transition: all ease-out 0.7s";
         }, 700);
 
-setTimeout(() => {
-  document.querySelectorAll(".contactManager-Text-Mobile").forEach(element => {
-  element.style="opacity:1;transition: all ease-out 0.7s"
-});
-}, 1000);
+ setTimeout(() => {
+          document.querySelector("#ContactManager .image-box-mobile").style =
+          "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/contactManagerPic.png');";
+          // document.querySelector("#ContactManager .image-box-mobile img").style =
+          //   "visibility:visible;transition: all ease-out 0.7s";
+        }, 500);
 
+        setTimeout(() => {
+          document
+            .querySelectorAll(".contactManager-Text-Mobile")
+            .forEach((element) => {
+              element.style = "opacity:1;transition: all ease-out 0.7s";
+            });
+        }, 1200);
+ setTimeout(() => {
+          document.querySelector("#ContactManager .image-box-mobile").style = 
+ "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/contactManagerPic.png');";
+        }, 2000);
       } else {
         this.$refs.contactManagerText.style = "margin-top:40rem;opacity:0";
         this.$refs.contactManagerImg.style =
           "opacity:0;margin-left:50rem;margin-top:50rem";
-  document.querySelectorAll(".contactManager-Text-Mobile").forEach(element => {
-  element.style="opacity:0;transition: all ease-out 0.7s"
-});
+        document
+          .querySelectorAll(".contactManager-Text-Mobile")
+          .forEach((element) => {
+            element.style = "opacity:0;transition: all ease-out 0.7s";
+          });
+ document.querySelector("#ContactManager .image-box-mobile").style =
+          "opacity:0;";
       }
     },
 
@@ -358,19 +350,39 @@ setTimeout(() => {
             "margin-left:0;opacity:1 ;margin-right:0rem;transition: all ease-out 0.7s";
         }, 700);
 
-setTimeout(() => {
-  document.querySelectorAll(".MemoryGame-Text-Mobile").forEach(element => {
-  element.style="opacity:1;transition: all ease-out 0.7s"
-});
-}, 1000);
+   setTimeout(() => {
+          document.querySelector("#MemoryGame .image-box-mobile").style =
+            "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/memoryGame.jpg');";
+          // document.querySelector("#MemoryGame .image-box-mobile img").style =
+          //   "visibility:visible;transition: all ease-out 0.7s";
+        }, 500);
+
+
+        setTimeout(() => {
+          document
+            .querySelectorAll(".MemoryGame-Text-Mobile")
+            .forEach((element) => {
+              element.style = "opacity:1;transition: all ease-out 0.7s";
+            });
+        }, 1200);
+
+ setTimeout(() => {
+          document.querySelector("#MemoryGame .image-box-mobile").style = 
+            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/memoryGame.jpg');";        
+        }, 2000);
 
       } else {
         this.$refs.MemoryGameImg.style =
           "margin-top:40rem; margin-left:-50rem;margin-right:50rem;opacity:0";
         this.$refs.MemoryGameText.style = "opacity:0 ;margin-top:-50rem";
-  document.querySelectorAll(".MemoryGame-Text-Mobile").forEach(element => {
-  element.style="opacity:0;transition: all ease-out 0.7s"
-});
+        document
+          .querySelectorAll(".MemoryGame-Text-Mobile")
+          .forEach((element) => {
+            element.style = "opacity:0;transition: all ease-out 0.7s";
+          });
+
+   document.querySelector("#MemoryGame .image-box-mobile").style =
+          "opacity:0;";
       }
     },
 
@@ -385,20 +397,39 @@ setTimeout(() => {
             "margin-left:0;opacity:1 ;transition: all ease-out 0.7s";
         }, 700);
 
-setTimeout(() => {
-  document.querySelectorAll(".tumblrclone-Text-Mobile").forEach(element => {
-  element.style="opacity:1;transition: all ease-out 0.7s"
-});
-}, 1000);
+  setTimeout(() => {
+          document.querySelector("#TumblrcClone .image-box-mobile").style =
+            "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/tumblrImg1.png');";
+          // document.querySelector("#TumblrcClone .image-box-mobile img").style =
+          //   "visibility:visible;transition: all ease-out 0.7s";
+        }, 500);
+
+        setTimeout(() => {
+          document
+            .querySelectorAll(".tumblrclone-Text-Mobile")
+            .forEach((element) => {
+              element.style = "opacity:1;transition: all ease-out 0.7s";
+            });
+        }, 1200);
+
+ setTimeout(() => {
+          document.querySelector("#TumblrcClone .image-box-mobile ").style = 
+            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/tumblrImg1.png');";        
+        }, 2000);
 
       } else {
         this.$refs.tumblrcloneImg.style =
           "margin-left:50rem; margin-top:50rem;opacity:0";
         this.$refs.tumblrcloneText.style =
           "opacity:0 ;margin-left:-50rem;margin-right:50rem";
-  document.querySelectorAll(".tumblrclone-Text-Mobile").forEach(element => {
-  element.style="opacity:0;transition: all ease-out 0.7s"
-});
+        document
+          .querySelectorAll(".tumblrclone-Text-Mobile")
+          .forEach((element) => {
+            element.style = "opacity:0;transition: all ease-out 0.7s";
+          });
+
+ document.querySelector("#TumblrcClone .image-box-mobile").style =
+          "opacity:0;";
       }
     },
 
