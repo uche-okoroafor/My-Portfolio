@@ -26,7 +26,7 @@ const Container = Vue.createApp({
         },
         { isActive: false, id: "#Footer", title: "Contact", linkId: "7" },
       ],
-      backgrounds: [{ url: "assets/background-image/background1.webp" }],
+      backgrounds: [{ url: "/assets/background-image/background1.webp" }],
       postedBy: [
         {
           artistName: "user",
@@ -353,7 +353,7 @@ setTimeout(() => {
           "margin-top:0;margin-left:-50rem; margin-right:50rem;opacity:1 ;transition: all ease-out 0.7s";
         setTimeout(() => {
           this.$refs.MemoryGameText.style =
-            "opacity:1 ;margin-top:0;transition: all ease-out 0.7s";
+            "opacity:1 ;margin-top:130px;transition: all ease-out 0.7s";
           this.$refs.MemoryGameImg.style =
             "margin-left:0;opacity:1 ;margin-right:0rem;transition: all ease-out 0.7s";
         }, 700);
