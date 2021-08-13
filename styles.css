@@ -183,6 +183,16 @@ section {
   overflow-x: hidden;
   overflow-y: hidden;
 }
+/* @media only screen and (max-width:11px) {
+  
+section {
+
+  overflow-x: hidden;
+  overflow-y:scroll;
+}
+
+
+} */
 
 #intro-Container {
   text-align: left;
@@ -595,7 +605,15 @@ transition: background 0.8s;
   position: relative;
   font-size: 1.2rem;
 padding-top: 5rem;
+padding-bottom: 2rem;
+  scrollbar-width:hidden;
+overflow-y: scroll;
 }
+
+#About::-webkit-scrollbar {
+    display: none;
+}
+
 
 .addBackground{
 background-color:var(--blue);
@@ -663,7 +681,8 @@ position: relative;
   border-radius: 5px;
   box-shadow: -7px 6px 5px 0px rgba(0, 0, 0, 0.8);
   transition: all 0.6s;
-right: 120%;
+right: 200%;
+opacity: 0;
 }
 @media only screen and (max-width:768px) {
   .image-frame{
@@ -761,19 +780,55 @@ strong {
   right: 52%;
   opacity: 0;
 }
+
+.text4 h3{
+margin-top: 10px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+@media only screen  and (max-width:768px){
+  .text4{
+font-size: 1rem;
+
+}
+}
+
+
 .text4-list ul {
   padding: 0 10px;
+
 }
+
+.text4-list :nth-child(1){
+
+padding-right: 2rem;
+
+}
+
+
 
 .text4-list li {
   list-style: square;
+white-space: nowrap;
 }
 
 .text4-list {
   display: flex;
-  justify-content: space-between;
+padding-bottom: 2rem;
+  /* justify-content: space-between; */
 }
 
+.break-header{
+display: none;
+
+}
+@media only screen and (max-width:415px) {
+  .break-header{
+display: inline;
+
+}
+}
 
 
 .about-text {
@@ -1006,6 +1061,12 @@ display: none;
   font-weight: 600;
   opacity: 0;
   white-space: nowrap;
+}
+@media only screen and (max-width:768px){
+ [class*="img-title"] {
+  font-size: 1.2rem;
+
+} 
 }
 
 .img-backdrop {
@@ -1438,6 +1499,13 @@ position: relative;
 z-index: 50;
 }
 
+.text-container-mobile h1,
+.text-container-mobile .links,
+.text-container-mobile .tools {
+padding: 0 20px;
+
+}
+
 
 
 .image-box img:hover {
@@ -1583,6 +1651,14 @@ padding: 20px;
 padding-left: 0 !important;
   margin-right: 20px;
   margin-left: 0;
+}
+@media only screen and (max-width1:1140px) {
+  .contact-manager-text .links,
+.tumblr-clone-text .links,.tumblr-clone .project-text-mobile .links,.contact-Manager .project-text-mobile .links {
+  
+padding-left: 20px !important;
+
+}
 }
 
 
