@@ -103,15 +103,10 @@ const Container = Vue.createApp({
         }
       });
 
-      // document.querySelectorAll(".menu-contents")[0].classList.add("addBackground")
-
       document.querySelectorAll(".menu-contents").forEach((element) => {
         if (element.innerHTML === indicator.title) {
-          // console.log(element.innerHTML, indicator.title);
           element.classList.add("addBackground");
         } else {
-          // console.log(element.innerHTML, indicator.title);
-
           element.classList.remove("addBackground");
         }
       });
@@ -133,7 +128,6 @@ const Container = Vue.createApp({
       }
 
       return "display:inline;opacity:1;text-shadow: -4px 3px 3px rgba(0, 0, 0, 0.43);";
-      // "color:#00cf35"
     },
 
     handleSearchInput() {
@@ -162,18 +156,12 @@ const Container = Vue.createApp({
     },
 
     displayAboutMe(indicator) {
-      let timer = 0;
       if (indicator[1].isActive.length) {
         this.$refs.photoBig.style =
           "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1.5s;right:0% ";
 
         setTimeout(() => {
           document.querySelectorAll(".display-text").forEach((element) => {
-            //  setTimeout(() => {
-            //         element.style =
-            //           "opacity:1;transition:cubic-bezier(.165,.84,.44,1) 1s;padding-top:0;";
-            //       },(timer += 200));
-
             setTimeout(() => {
               element.style = "opacity:1;transition: ease-in 1s;";
             }, 300);
@@ -181,7 +169,6 @@ const Container = Vue.createApp({
         }, 800);
       } else {
         this.$refs.photoBig.style = "opacity:0;right:120%;padding-top:0rem;";
-        // this.$refs.text1.style = "opacity:0;bottom: 68%;right:-50%;";
 
         document.querySelectorAll(".display-text").forEach((element) => {
           element.style = "opacity:0;padding-top:0rem;";
@@ -240,7 +227,6 @@ const Container = Vue.createApp({
           this.$refs.img2Mobileview.style = "opacity:0;left:100%";
           this.$refs.img3Mobileview.style = "opacity:0;left:100%";
           this.$refs.img4Mobileview.style = "opacity:0;left:100%";
-          this.$refs.hoverControl.style = "display:block";
           this.$refs.projectsText.style = "opacity:0";
           setTimeout(() => {
             this.$refs.projectsContainer.style = "display:none";
@@ -251,6 +237,11 @@ const Container = Vue.createApp({
 
     handleSoMediaDisplay(indicator) {
       if (indicator[3].isActive.length) {
+        this.$refs.hoverControl.style = "display:block";
+        setTimeout(() => {
+          this.$refs.hoverControl.style = "display:none";
+        }, 2000);
+
         this.$refs.SomediaImg.style =
           "margin-top:0;margin-left:-50rem;margin-right:50rem;opacity:1 ;transition: all ease-out 0.7s";
         setTimeout(() => {
@@ -259,12 +250,10 @@ const Container = Vue.createApp({
           this.$refs.SomediaImg.style =
             "margin-left:0;margin-right:0rem;opacity:1 ;transition: all ease-out 0.7s";
         }, 700);
-        // console.log(document.querySelectorAll(".somedia-Text-Mobile"));
+
         setTimeout(() => {
           document.querySelector("#Somedia .image-box-mobile").style =
             "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/somedia2.jpg');";
-          // document.querySelector("#Somedia .image-box-mobile img").style =
-          //   "visibility:visible;transition: all ease-out 0.7s";
         }, 500);
 
         setTimeout(() => {
@@ -273,13 +262,12 @@ const Container = Vue.createApp({
             .forEach((element) => {
               element.style = "opacity:1;transition: all ease-out 1s";
             });
-
         }, 1200);
 
         setTimeout(() => {
           document.querySelector("#Somedia .image-box-mobile").style =
-            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/somedia2.jpg');";        
-}, 2000);
+            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/somedia2.jpg');";
+        }, 2000);
       } else {
         this.$refs.SomediaImg.style =
           "margin-top:40rem; margin-left:-50rem;opacity:0;margin-right:50rem;";
@@ -297,6 +285,11 @@ const Container = Vue.createApp({
 
     handleContactManagerDisplay(indicator) {
       if (indicator[4].isActive.length) {
+        this.$refs.hoverControl.style = "display:block";
+        setTimeout(() => {
+          this.$refs.hoverControl.style = "display:none";
+        }, 2000);
+
         this.$refs.contactManagerImg.style =
           "opacity:1 ;margin-left:50rem;margin-top:0;transition: all ease-out 0.7s";
 
@@ -307,11 +300,9 @@ const Container = Vue.createApp({
             "opacity:1 ;margin-left:0;transition: all ease-out 0.7s";
         }, 700);
 
- setTimeout(() => {
+        setTimeout(() => {
           document.querySelector("#ContactManager .image-box-mobile").style =
-          "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/contactManagerPic.png');";
-          // document.querySelector("#ContactManager .image-box-mobile img").style =
-          //   "visibility:visible;transition: all ease-out 0.7s";
+            "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/contactManagerPic.png');";
         }, 500);
 
         setTimeout(() => {
@@ -321,9 +312,9 @@ const Container = Vue.createApp({
               element.style = "opacity:1;transition: all ease-out 0.7s";
             });
         }, 1200);
- setTimeout(() => {
-          document.querySelector("#ContactManager .image-box-mobile").style = 
- "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/contactManagerPic.png');";
+        setTimeout(() => {
+          document.querySelector("#ContactManager .image-box-mobile").style =
+            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/contactManagerPic.png');";
         }, 2000);
       } else {
         this.$refs.contactManagerText.style = "margin-top:40rem;opacity:0";
@@ -334,13 +325,18 @@ const Container = Vue.createApp({
           .forEach((element) => {
             element.style = "opacity:0;transition: all ease-out 0.7s";
           });
- document.querySelector("#ContactManager .image-box-mobile").style =
+        document.querySelector("#ContactManager .image-box-mobile").style =
           "opacity:0;";
       }
     },
 
     handleMemoryGameDisplay(indicator) {
       if (indicator[5].isActive.length) {
+        this.$refs.hoverControl.style = "display:block";
+        setTimeout(() => {
+          this.$refs.hoverControl.style = "display:none";
+        }, 2000);
+
         this.$refs.MemoryGameImg.style =
           "margin-top:0;margin-left:-50rem; margin-right:50rem;opacity:1 ;transition: all ease-out 0.7s";
         setTimeout(() => {
@@ -350,13 +346,10 @@ const Container = Vue.createApp({
             "margin-left:0;opacity:1 ;margin-right:0rem;transition: all ease-out 0.7s";
         }, 700);
 
-   setTimeout(() => {
+        setTimeout(() => {
           document.querySelector("#MemoryGame .image-box-mobile").style =
             "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/memoryGame.jpg');";
-          // document.querySelector("#MemoryGame .image-box-mobile img").style =
-          //   "visibility:visible;transition: all ease-out 0.7s";
         }, 500);
-
 
         setTimeout(() => {
           document
@@ -366,11 +359,10 @@ const Container = Vue.createApp({
             });
         }, 1200);
 
- setTimeout(() => {
-          document.querySelector("#MemoryGame .image-box-mobile").style = 
-            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/memoryGame.jpg');";        
+        setTimeout(() => {
+          document.querySelector("#MemoryGame .image-box-mobile").style =
+            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/memoryGame.jpg');";
         }, 2000);
-
       } else {
         this.$refs.MemoryGameImg.style =
           "margin-top:40rem; margin-left:-50rem;margin-right:50rem;opacity:0";
@@ -381,13 +373,18 @@ const Container = Vue.createApp({
             element.style = "opacity:0;transition: all ease-out 0.7s";
           });
 
-   document.querySelector("#MemoryGame .image-box-mobile").style =
+        document.querySelector("#MemoryGame .image-box-mobile").style =
           "opacity:0;";
       }
     },
 
     handleTumblrDisplay(indicator) {
       if (indicator[6].isActive.length) {
+        this.$refs.hoverControl.style = "display:block";
+        setTimeout(() => {
+          this.$refs.hoverControl.style = "display:none";
+        }, 2000);
+
         this.$refs.tumblrcloneImg.style =
           "margin-top:0;margin-left:50rem;opacity:1 ;transition: all ease-out 0.7s";
         setTimeout(() => {
@@ -397,11 +394,9 @@ const Container = Vue.createApp({
             "margin-left:0;opacity:1 ;transition: all ease-out 0.7s";
         }, 700);
 
-  setTimeout(() => {
+        setTimeout(() => {
           document.querySelector("#TumblrcClone .image-box-mobile").style =
             "opacity:1;transition: all ease-out 0.7s;background-image:url('./assets/images/tumblrImg1.png');";
-          // document.querySelector("#TumblrcClone .image-box-mobile img").style =
-          //   "visibility:visible;transition: all ease-out 0.7s";
         }, 500);
 
         setTimeout(() => {
@@ -412,11 +407,10 @@ const Container = Vue.createApp({
             });
         }, 1200);
 
- setTimeout(() => {
-          document.querySelector("#TumblrcClone .image-box-mobile ").style = 
-            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/tumblrImg1.png');";        
+        setTimeout(() => {
+          document.querySelector("#TumblrcClone .image-box-mobile ").style =
+            "opacity:1;transition: all ease-out 1s;background-image: linear-gradient(115deg,rgba(20, 33, 45, 0.9),rgba(20, 33, 45, 0.9)),url('./assets/images/tumblrImg1.png');";
         }, 2000);
-
       } else {
         this.$refs.tumblrcloneImg.style =
           "margin-left:50rem; margin-top:50rem;opacity:0";
@@ -428,14 +422,11 @@ const Container = Vue.createApp({
             element.style = "opacity:0;transition: all ease-out 0.7s";
           });
 
- document.querySelector("#TumblrcClone .image-box-mobile").style =
+        document.querySelector("#TumblrcClone .image-box-mobile").style =
           "opacity:0;";
       }
     },
 
-    //  this.handleContactManagerDisplay(this.indicatorList);
-    //       this.handleMemoryGameDisplay(this.indicatorList);
-    //       this.handleTumblrDisplay(this.indicatorList);
     handleMediaIconPop(indicator) {
       let timer = 0;
       if (indicator[7].isActive.length) {
@@ -469,14 +460,11 @@ const Container = Vue.createApp({
         backgrounds[num].url +
         ")";
 
-      // background-image: linear-gradient( 115deg, rgba(0, 25, 53, 0.9), rgba(0, 25, 53, 0.9) ), url("https://i.guim.co.uk/img/media/2abe5a9bee5769168843fc873d39aa2696a7cc0d/0_139_4467_2681/master/4467.jpg?width=1920&quality=85&auto=format&fit=max&s=a8c43e81775114404286ffd675453f7f");
-
       this.$refs.footer.style =
         "background-image: linear-gradient( 115deg, rgba(0, 25, 53, 0.9), rgba(0, 25, 53, 0.9) ), url(" +
         backgrounds[num].url +
         ")";
-      // this.postedBy[0].artistAvatar = backgrounds[num].avatar;
-      // this.postedBy[0].artistName = backgrounds[num].name;
+
       setInterval(() => {
         let num = Math.floor(Math.random() * backgrounds.length);
         this.$refs.login.style =
@@ -487,8 +475,6 @@ const Container = Vue.createApp({
           "background-image: linear-gradient( 115deg, rgba(0, 25, 53, 0.9), rgba(0, 25, 53, 0.9) ), url(" +
           backgrounds[num].url +
           ")";
-        // this.postedBy[0].artistAvatar = backgrounds[num].avatar;
-        // this.postedBy[0].artistName = backgrounds[num].name;
       }, 10000);
     },
     handleMenuBar(params) {
@@ -500,17 +486,9 @@ const Container = Vue.createApp({
           document.querySelectorAll(".menu-contents").forEach((content) => {
             setTimeout(() => {
               content.style =
-                "margin-left:0;transition: all 1s cubic-bezier(.165,.84,.44,1)";
+                "margin-left:0;transition: all 0.7s cubic-bezier(.165,.84,.44,1)";
             }, (timer += 150));
           });
-
-          //  for(let content in  document.getElementsByClassName("menu-contents")){
-
-          // setTimeout(() => {
-          //      document.getElementsByClassName("menu-contents")[content].style="margin-left:0;transition: all 1s cubic-bezier(.165,.84,.44,1)";
-
-          // }, 1000);
-          //   }
         }, 100);
         this.menuBarOpen = true;
       } else {
