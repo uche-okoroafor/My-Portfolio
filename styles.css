@@ -634,9 +634,7 @@ nav .navtitle {
   align-items: center; */
   float: left;
 }
-img{
-  background:var(--navy);
-}
+
 .image-frame img {
   position: relative;
   max-width: 250px;
@@ -645,7 +643,6 @@ img{
   box-shadow: -7px 6px 5px 0px rgba(0, 0, 0, 0.8);
   transition: all 0.6s;
   right: 200%;
-
   opacity: 0;
 }
 @media only screen and (max-width: 768px) {
@@ -1321,17 +1318,12 @@ align-items: center; */
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .project-text-mobile {
-    /* padding-top: 2rem!important; */
-  }
-}
+
 
 @media only screen and (max-width: 500px) {
   .project-text-mobile {
     padding: 0 1rem !important;
     margin-top: 5rem !important;
-    /* padding-top: 4rem!important; */
   }
 
  #Somedia .project-text-mobile {
@@ -1341,11 +1333,7 @@ align-items: center; */
   }
 }
 
-@media only screen and (max-width: 370px) {
-  .project-text-mobile {
-    /* padding-top: 4rem!important; */
-  }
-}
+
 
 
 
