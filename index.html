@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Uche Okoroafor</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="assets/images/logo.png" type="image/icon type">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <nav id="nav">
+            <div class="navbar">
+                <div class="logo-img" ref="threshold">
+                    <a href="#home"><img src="assets/images/logo.png" alt="logo"></a>
+                </div>
+
+                <div class="login-signup-btn">
+
+                    <a href="assets/Resume/my resume.pdf" target="-blank" class="btn  ">Resume</a> <a href="#Footer"
+                        class="btn mr-3 ml-3">Contact</a>
+
+                </div>
+                <div class="menu-icon pr-3">
+                    <i class="fa fa-2x fa-bars" v-if="!menuBarOpen" @click="handleMenuBar('open')"
+                        aria-hidden="true"></i>
+                    <i class="fa fa-times fa-2x" v-if="menuBarOpen" @click="handleMenuBar('close')" class="close-Menu"
+                        aria-hidden="true"></i>
+                    <div class="menu-container" ref="menuContainer">
+                        <ul>
+                            <a href="#Intro" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Intro</li>
+                            </a>
+                            <a href="#About" @click="handleMenuBar('close')">
+                                <li class="menu-contents">About</li>
+                            </a>
+                            <a href="#Projects" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Projects</li>
+                            </a>
+                            <a href="#Somedia" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Project 1</li>
+                            </a>
+                            <a href="#ContactManager" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Project 3</li>
+                            </a>
+                            <a href="#TumblrClone" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Project 2</li>
+                            </a>
+                            <a href="#MemoryGame" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Project 4</li>
+                            </a>
+                            <a href="#Footer" @click="handleMenuBar('close')">
+                                <li class="menu-contents">Contact</li>
+                            </a>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="backDrop" v-if="menuBarOpen" @click="handleMenuBar()"></div>
+            </div>
+            <ul class="nav-indicator-container indicator-group" id="nav-indicator">
+                <li v-for="indicator in indicatorList" @click='activeIndicator(indicator)' class="indicator"
+                    :class="indicator.isActive"><a :href="indicator.id" :id='indicator.linkId'></a> <span
+                        :style="handleActiveIndicator(indicator)" class="navtitle">{{indicator.title}}</span> </li>
+
+            </ul>
+        </nav>
+        <section id="Intro" ref="login" class="login">
+            <div id="intro-Container">
+                <p class="display-Intro-Text">Hi, My Name Is </p>
+                <h1 class="display-Intro-Text">Uche Okoroafor.<br>I am a Web Developer</h1>
+                <p class="display-Intro-Text">I am currently Based in Dubai. I have passion for coding and challenging
+                    <br> myself creatively.<br>
+                    I can
+                    create
+                    simple and amazing responsive websites with a whimsical twist
+                </p>
+
+            </div>
+
+            <div class="about-me">
+                <a href="#About">About Me?</a>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <section id="About" ref="About" class="About">
+            <div class=" content-texts">
+                <div class="image-frame">
+                    <img src="assets/images/uche.jpg" alt="My-Photo" ref="photoBig">
+                </div>
+                <p class="display-text">My Name is
+                <h3 class="display-text" style="display: inline;">Uchechukwu okoroafor
+                </h3>
+                </p>
+                <p class="display-text">You can call me <strong> Uche</strong> </p>
+                <p class="display-text"> I am a Web developer and a Graduate of Computer Engineering I am
+                    currently Based
+                    in
+                    Dubai, United Arab Emirates. </p>
+
+                <p class="display-text"> I am an excellent savvy, enthusiastic and result oriented individual, seeking
+                    employment in a
+                    dynamic
+                    environment that offers an exceptional knowledge of absorbing information, analyzing problems,
+                    making
+                    objective decisions and
+                    working with existing human and material resources, so as to achieve a high degree of work
+                    efficiency.</p>
+                <p class="display-text">I have passion for coding and challenging myself creatively.I enjoy learning new
+                    skills daily,and
+                    staying connected, and involved with my fellow developers.</p>
+
+                <div class="p-tag  text4  display-text">
+                    <h3> Here are the technologies I've been working <br class="break-header"> with :</h3>
+                    <div class="text4-list">
+                        <ul>
+                            <li>HTML5 <i style="color: #DD4B25;" class="fab fa-html5"></i></li>
+                            <li>CSS3 <i style="color:#254BDD ;" class="fab fa-css3-alt"></i></li>
+                            <li>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i> </li>
+                            <li>Responsive Web Design</li>
+
+                        </ul>
+                        <ul>
+                            <li>Javascript <i style="color:#F7DF1E ;" class="fab fa-js-square"></i></li>
+                            <li>JQuery </li>
+                            <li>Vue <i style="color:#1ef78a ;" class="fab fa-vuejs"></i></li>
+                            <li>React <i style="color:#5ED3F3 ;" class="fab fa-react"></i></li>
+                        </ul>
+                              <ul>
+                            <li>TypeScript</li>
+                            <li>Node-Js </li>
+                                  <li>Material UI</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+        </section>
+        <section id="Projects" ref="projects">
+            <div class="projects">
+                <h3 ref="projectsText">
+                    These are Some of My Works.</h3>
+
+            </div>
+
+
+            <div class="projects-Container" ref="projectsContainer">
+                <a href="#MemoryGame" class="img1" ref="img1">
+
+                    <img src="assets/images/memoryGame.jpg" alt="memorygame">
+
+
+                    <span class="imgtitle-container">
+                        <span class="img-title1">Memory Game</span>
+                    </span>
+                </a>
+                <div class="img-backdrop"></div>
+
+                <a href="#TumblrcClone" class="img2 img-desktopView" ref="img2">
+                    <img src="assets/images/tumblrImg2.jpg" alt="tumblr">
+                    <span class="imgtitle-container">
+                        <span class="img-title2">Tumblr Clone</span>
+                    </span>
+                </a>
+
+                <a href="#TumblrcClone" class="img2 img-Mobileview" ref="img2Mobileview">
+                    <img src="assets/images/tumblrImg2.jpg" alt="tumblr">
+                    <span class="imgtitle-container">
+                        <span class="img-title2">Tumblr Clone</span>
+                    </span>
+                </a>
+                <div class="img-backdrop"></div>
+
+                <a href="#ContactManager" class="img3  img-desktopView" ref="img3">
+                    <img src="assets/images/contactmanager.jpg" alt="contact">
+                    <span class="imgtitle-container">
+                        <span class="img-title3">Contact Manager</span>
+
+                    </span>
+                </a>
+
+                <a href="#ContactManager" style="margin-top: 2rem;" class="img3 img-Mobileview" ref="img3Mobileview">
+                    <img src="assets/images/contactmanager.jpg" alt="contact">
+                    <span class="imgtitle-container">
+                        <span class="img-title3">Contact Manager</span>
+
+                    </span>
+                </a>
+
+                <div class="img-backdrop"></div>
+                <a href="#Somedia" class="img4 img-desktopView" ref="img4">
+                    <img src="assets/images/somedia1.jpg" alt="somedia">
+                    <span class="imgtitle-container">
+                        <span class="img-title4">SoMedia</span>
+
+                    </span>
+                </a>
+
+                <a href="#Somedia" class="img4 img-Mobileview" ref="img4Mobileview">
+                    <img src="assets/images/somedia1.jpg" alt="somedia">
+                    <span class="imgtitle-container">
+                        <span class="img-title4">SoMedia</span>
+
+                    </span>
+                </a>
+                <div class="img-backdrop"></div>
+                <div class="hoverControl" ref="hoverControl"></div>
+
+            </div>
+
+
+        </section>
+
+
+        <section id="Somedia" ref="Somedia" class="Somedia">
+
+            <div class="Somedia-img">
+
+
+
+
+                <div class="image-box" ref="SomediaImg">
+
+                    <a href="https://uche-okoroafor.github.io/SoMedia" target="#blank"><img
+                            src="assets/images/somedia2.jpg" alt="sleeping-box"></a>
+
+
+                </div>
+
+            </div>
+            <div class="project-text project" ref="somediaText">
+
+                <h1>SoMedia</h1>
+
+                <div class="text-container ">
+                    <p>
+                        SoMedia is a Social Media App,it provides users free web space to Upload contents like text,
+                        image or video
+                        in real time, users can like or comment on any content uploaded by other users,instant messaging
+                        between users is also avaliable in SoMedia.
+                        Users using SoMedia can build their profile by entering personal details and
+                        many more
+
+                    </p>
+
+
+                </div>
+                <div class="tools  ">
+                    <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp; <span>Bootstrap <i
+                            style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp; <span>Vue.Js <i
+                            style="color:#3FB27F ;" class="fab fa-vuejs"></i></span>
+
+                </div>
+                <div class="links ">
+                    <a href="https://github.com/uche-okoroafor/SoMedia" target="#blank"><span class="btn  btn-success"
+                            style="background-color: #00cf35;">View code <i style="color: #1b1f23"
+                                class="fab fa-github"></i></span></a>
+                    &nbsp;
+                    <a href="https://uche-okoroafor.github.io/SoMedia" target="#blank"><span class="btn btn-info"
+                            style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
+                                class="fas fa-external-link-alt"></i></span></a>
+                </div>
+
+            </div>
+
+
+            <div class="project-text   project-text-mobile">
+                <div class=" image-box-mobile">
+
+                    <a href="https://uche-okoroafor.github.io/SoMedia" target="#blank"><img
+                            src="assets/images/somedia2.jpg" alt="sleeping-box"></a>
+
+
+                </div>
+                <div class="text-container-mobile" ref="somediaMobile">
+                    <h1 class="somedia-Text-Mobile">SoMedia</h1>
+
+                    <div class="text-container somedia-Text-Mobile">
+                        <p>
+                            SoMedia is a Social Media App,it provides users free web space to Upload contents like text,
+                            image or video
+                            in real time, users can like or comment on any content uploaded by other users,instant
+                            messaging
+                            between users is also avaliable in SoMedia.
+                            Users using SoMedia can build their profile by entering personal details and
+                            many more
+
+                        </p>
+
+
+                    </div>
+                    <div class="tools somedia-Text-Mobile">
+                        <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp;
+                        <span>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp;
+                        <span>Vue.Js <i style="color:#3FB27F ;" class="fab fa-vuejs"></i></span>
+
+                    </div>
+                    <div class="links  somedia-Text-Mobile">
+                        <a href="https://github.com/uche-okoroafor/SoMedia" target="#blank"><span
+                                class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                    style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                        &nbsp;
+                        <a href="https://uche-okoroafor.github.io/SoMedia" target="#blank"><span class="btn btn-info"
+                                style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
+                                    class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <section id="ContactManager" ref="contactManager" class="contact-Manager">
+
+            <div class="contact-manager-text project" ref="contactManagerText">
+
+                <h1>Contact Manager</h1>
+
+                <div class="text-container  ">
+                    <p>
+                        This is a web application that has the capability to sort contacts, store contacts,Edit
+                        contacts, Delete contacts,retrieve contact details and Fetch Data from a Server
+
+                    </p>
+
+
+                </div>
+                <div class="tools">
+                    <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp; <span>Bootstrap <i
+                            style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp; <span>React.Js <i
+                            style="color:#5ED3F3 ;" class="fab fa-react"></i></span>
+
+                </div>
+                <div class="links">
+                    <a href="https://github.com/uche-okoroafor/Contact-Manager/tree/master" target="-blank"><span
+                            class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                    &nbsp;
+                    <a href=" https://uche-okoroafor.github.io/Contact-Manager/" target="#blank"><span
+                            class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
+                                class="fas fa-external-link-alt"></i></span></a>
+                </div>
+
+            </div>
+            <div class="contact-manager-image">
+
+
+                <div class="image-box" ref="contactManagerImg">
+                    <a href="https://uche-okoroafor.github.io/Contact-Manager/" target="#blank">
+                        <img src="assets/images/contactManagerPic.png" alt="sleeping-box"></a>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="project-text   project-text-mobile">
+                <div class=" image-box-mobile">
+
+                    <a href="https://uche-okoroafor.github.io/Contact-Manager/" target="#blank"><img
+                            src="assets/images/contactManagerPic.png" alt="sleeping-box"></a>
+
+
+                </div>
+                <div class="text-container-mobile" ref="contactMangerMobile">
+                    <h1 class="contactManager-Text-Mobile">Contact Manager</h1>
+
+                    <div class="text-container contactManager-Text-Mobile">
+                        <p>
+This is a web application that has the capability to sort contacts, store contacts, Edit contacts, Delete contacts, retrieve contact details, and Fetch Data from an Api
+                        </p>
+
+
+                    </div>
+                    <div class="tools contactManager-Text-Mobile">
+                        <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp;
+                        <span>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp;
+                        <span>React.Js <i style="color:#5ED3F3 ;" class="fab fa-react"></i></span>
+
+                    </div>
+                    <div class="links contactManager-Text-Mobile">
+                        <a href=""><span class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                    style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                        &nbsp;
+                        <a href=""><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                    style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+        <section id="MemoryGame" ref="memoryGame" class="Memory-Game">
+
+            <div class="Memory-Game-img">
+
+
+
+
+                <div class="image-box" ref="MemoryGameImg">
+
+                    <a href="https://uche-okoroafor.github.io/Memory-Game/" target="#blank"><img
+                            src="assets/images/memoryGameImage1.png" alt="sleeping-box"></a>
+
+
+                </div>
+
+            </div>
+            <div class="project-text project" ref="MemoryGameText">
+
+                <h1>Memory Game</h1>
+
+                <div class="text-container">
+                    <p>
+                        Check how good you are with your Memory by playing "Memory Game".To get started, click on any
+                        image and try not to click the same image twice to win the Game.
+
+                    </p>
+
+
+                </div>
+                <div class="tools">
+                    <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp; <span>Bootstrap <i
+                            style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp; <span>React.Js <i
+                            style="color:#5ED3F3 ;" class="fab fa-react"></i></span>
+
+                </div>
+                <div class="links">
+                    <a href="https://github.com/uche-okoroafor/Memory-Game/tree/master" target="#blank"><span
+                            class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                    &nbsp;
+                    <a href="https://uche-okoroafor.github.io/Memory-Game/" target="#blank"><span class="btn btn-info"
+                            style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
+                                class="fas fa-external-link-alt"></i></span></a>
+                </div>
+
+            </div>
+
+            <div class="project-text   project-text-mobile">
+                <div class=" image-box-mobile">
+
+                    <a href="https://uche-okoroafor.github.io/Memory-Game/" target="#blank"><img
+                            src="assets/images/memoryGame.jpg" alt="sleeping-box"></a>
+
+
+                </div>
+                <div class="text-container-mobile" ref="memoryGameMobile">
+                    <h1 class="MemoryGame-Text-Mobile">Memory Game</h1>
+                    <div class="text-container  MemoryGame-Text-Mobile">
+                        <p>
+                            Check how good you are with your Memory by playing "Memory Game".To get started, click on
+                            any
+                            image and try not to click the same image twice to win the Game.
+
+                        </p>
+
+
+                    </div>
+                    <div class="tools MemoryGame-Text-Mobile">
+                        <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp;
+                        <span>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp;
+                        <span>React.Js <i style="color:#5ED3F3 ;" class="fab fa-react"></i></span>
+
+                    </div>
+                    <div class="links  MemoryGame-Text-Mobile">
+                        <a href="https://uche-okoroafor.github.io/Memory-Game/"><span class="btn  btn-success"
+                                style="background-color: #00cf35;">View code <i style="color: #1b1f23"
+                                    class="fab fa-github"></i></span></a>
+                        &nbsp;
+                        <a href="https://uche-okoroafor.github.io/Memory-Game/" target="#blank"><span
+                                class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                    style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="TumblrcClone" ref="tumblrClone" class="tumblr-clone">
+
+
+
+            <div class="tumblr-clone-text project" ref="tumblrcloneText">
+
+                <h1>Tumblr Clone</h1>
+
+                <div class="text-container  ">
+                    <p>
+                        A clone of <a href="https://www.tumblr.com" style="color: #ff9f00;"
+                            target="_blank">Tumblr.com</a> home page "Desktop View"
+
+                    </p>
+
+
+                </div>
+                <div class="tools">
+                    <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp; <span>Bootstrap <i
+                            style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp; <span>Vue.Js <i
+                            style="color:#3FB27F ;" class="fab fa-vuejs"></i></span>
+
+                </div>
+                <div class="links">
+                    <a href="https://github.com/uche-okoroafor/Tumblr-Clone" target="-blank"><span
+                            class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                    &nbsp;
+                    <a href="https://uche-okoroafor.github.io/Tumblr-Clone" target="-blank"><span class="btn btn-info"
+                            style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
+                                class="fas fa-external-link-alt"></i></span></a>
+                </div>
+
+            </div>
+            <div class="tumblr-clone-image">
+
+
+                <div class="image-box" ref="tumblrcloneImg">
+                    <a href="https://uche-okoroafor.github.io/Tumblr-Clone" target="-blank">
+                        <img src="assets/images/tumblrImg1.png" alt="sleeping-box"></a>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="project-text   project-text-mobile">
+                <div class=" image-box-mobile">
+
+                    <a href="https://uche-okoroafor.github.io/Tumblr-Clone" target="#blank"><img
+                            src="assets/images/tumblrImg1.png" alt="sleeping-box"></a>
+
+
+                </div>
+                <div class="text-container-mobile" ref="tumblrMobile">
+                    <h1 class="tumblrclone-Text-Mobile">Tumblr Clone</h1>
+
+                    <div class="text-container  tumblrclone-Text-Mobile ">
+                        <p>
+                            A clone of <a href="https://www.tumblr.com" style="color: #ff9f00;"
+                                target="_blank">Tumblr.com</a> home page "Desktop View"
+
+                        </p>
+
+
+                    </div>
+                    <div class="tools  tumblrclone-Text-Mobile">
+                        <span>Tools <i style="color: #00b8ff;" class="fas fa-tools"></i> </span> : &nbsp;
+                        <span>Bootstrap <i style="color:#533B78 ;" class="fab fa-bootstrap"></i></span> &nbsp;
+                        <span>Vue.Js <i style="color:#3FB27F ;" class="fab fa-vuejs"></i></span>
+
+                    </div>
+                    <div class="links  tumblrclone-Text-Mobile">
+                        <a href="https://github.com/uche-okoroafor/Tumblr-Clone" target="-blank"><span
+                                class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                    style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                        &nbsp;
+                        <a href="https://uche-okoroafor.github.io/Tumblr-Clone" target="-blank"><span
+                                class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                    style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="Footer" ref="footer" class="footer">
+
+            <div>
+
+                <h3 class="footer-Text1" ref="footerText1">Interested in Knowing more about me?</h3>
+            </div>
+            <div class="footer-icons">
+                <div class="footer-icons-container">
+
+                    <a class="iconContainer" href="https://github.com/uche-okoroafor" target="#blank">
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-github icon"></i>
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a class="iconContainer" href="https://twitter.com/Uchman101" target="#blank">
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-twitter icon"></i>
+                            </div>
+
+                        </div>
+                    </a>
+                    <a class="iconContainer" href="https://www.linkedin.com/in/uche-okoroafor-a9286b19b"
+                        target="#blank">
+
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-linkedin icon"></i>
+                            </div>
+
+                        </div>
+                    </a>
+                    <a class="iconContainer" href="https://www.instagram.com/uche_okoroafor/" target="#blank">
+
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-instagram icon"></i>
+                            </div>
+
+                        </div>
+                    </a>
+
+                </div>
+                <div class="footer-icons-container pt-0">
+
+                    <a class="iconContainer" href="https://www.facebook.com/uche.okoroafor/" target="#blank">
+
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fab fa-2x fa-facebook"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="iconContainer" href="mailto:ucheokoroafor018@gmail.com" target="#blank">
+                        <div class="icon-background">
+                            <div class="iconspace">
+                                <i class="fa fa-2x fa-at" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
+                    </a>
+
+                </div>
+
+
+
+            </div>
+
+            <div>
+                <p class="footer-text2" ref="footerText2">Feel free to visit my social media pages</p>
+            </div>
+
+
+
+
+
+            <div class="footer-text">
+                <p>@ Uche Okoroafor 2020. View the code on <a href="https://github.com/uche-okoroafor/Portfolio"
+                        target="#blank">GitHub.</a></p>
+
+            </div>
+        </section>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+<script src="scripts.js"></script>
+
+</html>
