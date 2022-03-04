@@ -510,12 +510,13 @@ const Container = Vue.createApp({
       await fetch('https://api.ipify.org?format=json', fetchOptions).then(
         response => {
           if (response) {
-            const ip = response.json().data
+            const ip = response.json().id
             // console.log(ip, 'response.json()')
 
-            fetch(`http://localhost:5000/visitor/add/${ip}`, fetchOptions).then(
-              res => console.log()
-            )
+            fetch(
+              `https://vstreamers.herokuapp.com/visitor/add/${ip}`,
+              fetchOptions
+            ).then(res => console.log())
           }
         }
       )
