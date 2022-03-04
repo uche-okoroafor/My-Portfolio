@@ -43,6 +43,7 @@ const Container = Vue.createApp({
       .getElementById('container')
       .addEventListener('scroll', () => this.onScroll(this.$refs))
     this.handleBackgroundImage(this.backgrounds)
+    this.addVisitor()
   },
   beforeUnmount () {
     document
@@ -57,11 +58,8 @@ const Container = Vue.createApp({
         document.body.scrollTop > 1000 ||
         document.documentElement.scrollTop > 100
       ) {
-        console.log('yes')
-
         this.zero = document.body.scrollTop
       } else {
-        console.log('no')
       }
 
       this.isElementInViewport(ref.login) &&
@@ -127,7 +125,7 @@ const Container = Vue.createApp({
         return ''
       }
 
-      return 'display:inline;opacity:1;text-shadow: -4px 3px 3px rgba(0, 0, 0, 0.43);'
+      return 'display:inline;opacity:1'
     },
 
     handleSearchInput () {
@@ -499,6 +497,28 @@ const Container = Vue.createApp({
           }, (timer += 150))
         })
       }
+    },
+
+    async addVisitor () {
+      const fetchOptions = {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }
+      await fetch('https://api.ipify.org?format=json', fetchOptions).then(
+        response => {
+          if (response) {
+            const ip = response.json().data
+            // console.log(ip, 'response.json()')
+
+            fetch(`http://localhost:5000/visitor/add/${ip}`, fetchOptions).then(
+              res => console.log()
+            )
+          }
+        }
+      )
     }
   }
 })
