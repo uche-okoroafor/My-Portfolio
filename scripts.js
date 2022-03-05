@@ -95,6 +95,7 @@ const Container = Vue.createApp({
     activeIndicator (indicator) {
       this.indicatorList.forEach(indicatorIndex => {
         if (indicatorIndex.title === indicator.title) {
+          this.addVisitor(indicatorIndex.title)
           indicatorIndex.isActive = 'activeindicator'
         } else {
           indicatorIndex.isActive = false
