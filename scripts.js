@@ -511,6 +511,7 @@ const Container = Vue.createApp({
             fetchOptions
           )
         )
+        .catch(err => console.log(err))
     }
   }
 })
