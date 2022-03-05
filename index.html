@@ -21,12 +21,13 @@
         <nav id="nav">
             <div class="navbar">
                 <div class="logo-img" ref="threshold">
-                    <a href="#home"><img src="assets/images/logo.png" alt="logo"></a>
+                    <a @click="addVisitor('home')" href="#home"><img src="assets/images/logo.png" alt="logo"></a>
                 </div>
 
                 <div class="login-signup-btn">
 
-                    <a href="assets/Resume/my resume.pdf" target="-blank" class="btn  ">Resume</a> <a href="#Footer"
+                    <a @click="addVisitor('resume')" href="assets/Resume/my resume.pdf" target="-blank"
+                        class="btn  ">Resume</a> <a @click="addVisitor('contact')" href="#Footer"
                         class="btn mr-3 ml-3">Contact</a>
 
                 </div>
@@ -46,16 +47,17 @@
                             <a href="#Projects" @click="handleMenuBar('close')">
                                 <li class="menu-contents">Projects</li>
                             </a>
-                            <a href="#Somedia" @click="handleMenuBar('close')">
+                            <a @click="addVisitor('somedia check')" href="#Somedia" @click="handleMenuBar('close')">
                                 <li class="menu-contents">Project 1</li>
                             </a>
-                            <a href="#ContactManager" @click="handleMenuBar('close')">
+                            <a @click="addVisitor('vStreamer check')" href="#ContactManager"
+                                @click="handleMenuBar('close')">
                                 <li class="menu-contents">Project 3</li>
                             </a>
                             <a href="#TumblrClone" @click="handleMenuBar('close')">
                                 <li class="menu-contents">Project 2</li>
                             </a>
-                            <a href="#MemoryGame" @click="handleMenuBar('close')">
+                            <a @click="addVisitor('#MemoryGame')" href="#MemoryGame" @click="handleMenuBar('close')">
                                 <li class="menu-contents">Project 4</li>
                             </a>
                             <a href="#Footer" @click="handleMenuBar('close')">
@@ -162,7 +164,7 @@
 
 
             <div class="projects-Container" ref="projectsContainer">
-                <a href="#MemoryGame" class="img1" ref="img1">
+                <a @click="addVisitor('#MemoryGame')" href="#MemoryGame" class="img1" ref="img1">
 
                     <img src="assets/images/memoryGame.jpg" alt="memorygame">
 
@@ -173,14 +175,15 @@
                 </a>
                 <div class="img-backdrop"></div>
 
-                <a href="#TumblrcClone" class="img2 img-desktopView" ref="img2">
+                <a @click="addVisitor('tumblr check')" href="#TumblrcClone" class="img2 img-desktopView" ref="img2">
                     <img src="assets/images/tumblrImg2.jpg" alt="tumblr">
                     <span class="imgtitle-container">
                         <span class="img-title2">Tumblr Clone</span>
                     </span>
                 </a>
 
-                <a href="#TumblrcClone" class="img2 img-Mobileview" ref="img2Mobileview">
+                <a @click="addVisitor('tumblr check')" href="#TumblrcClone" class="img2 img-Mobileview"
+                    ref="img2Mobileview">
                     <img src="assets/images/tumblrImg2.jpg" alt="tumblr">
                     <span class="imgtitle-container">
                         <span class="img-title2">Tumblr Clone</span>
@@ -188,7 +191,8 @@
                 </a>
                 <div class="img-backdrop"></div>
 
-                <a href="#ContactManager" class="img3  img-desktopView" ref="img3">
+                <a @click="addVisitor('vStreamer check')" href="#ContactManager" class="img3  img-desktopView"
+                    ref="img3">
                     <img src="assets/images/Vstreamer.jpg" alt="contact">
                     <span class="imgtitle-container">
                         <span class="img-title3">VStreamer</span>
@@ -196,7 +200,8 @@
                     </span>
                 </a>
 
-                <a href="#ContactManager" style="margin-top: 2rem;" class="img3 img-Mobileview" ref="img3Mobileview">
+                <a @click="addVisitor('vStreamer check')" href="#ContactManager" style="margin-top: 2rem;"
+                    class="img3 img-Mobileview" ref="img3Mobileview">
                     <img src="assets/images/Vstreamer.jpg" alt="contact">
                     <span class="imgtitle-container">
                         <span class="img-title3">VStreamer</span>
@@ -205,7 +210,7 @@
                 </a>
 
                 <div class="img-backdrop"></div>
-                <a href="#Somedia" class="img4 img-desktopView" ref="img4">
+                <a @click="addVisitor('somedia check')" href="#Somedia" class="img4 img-desktopView" ref="img4">
                     <img src="assets/images/somedia1.jpg" alt="somedia">
                     <span class="imgtitle-container">
                         <span class="img-title4">SoMedia</span>
@@ -213,7 +218,8 @@
                     </span>
                 </a>
 
-                <a href="#Somedia" class="img4 img-Mobileview" ref="img4Mobileview">
+                <a @click="addVisitor('somedia check')" href="#Somedia" class="img4 img-Mobileview"
+                    ref="img4Mobileview">
                     <img src="assets/images/somedia1.jpg" alt="somedia">
                     <span class="imgtitle-container">
                         <span class="img-title4">SoMedia</span>
@@ -238,8 +244,8 @@
 
                 <div class="image-box" ref="SomediaImg">
 
-                    <a href="https://uche-okoroafor.github.io/SoMedia" target="#blank"><img
-                            src="assets/images/somedia2.jpg" alt="sleeping-box"></a>
+                    <a @click="addVisitor('somedia site')" href="https://uche-okoroafor.github.io/SoMedia"
+                        target="#blank"><img src="assets/images/somedia2.jpg" alt="sleeping-box"></a>
 
 
                 </div>
@@ -269,13 +275,13 @@
 
                 </div>
                 <div class="links ">
-                    <a href="https://github.com/uche-okoroafor/SoMedia" target="#blank"><span class="btn  btn-success"
-                            style="background-color: #00cf35;">View code <i style="color: #1b1f23"
-                                class="fab fa-github"></i></span></a>
+                    <a @click="addVisitor('memoryGame code')" href="https://github.com/uche-okoroafor/SoMedia"
+                        target="#blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
                     &nbsp;
-                    <a href="https://uche-okoroafor.github.io/SoMedia" target="#blank"><span class="btn btn-info"
-                            style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
-                                class="fas fa-external-link-alt"></i></span></a>
+                    <a @click="addVisitor('somedia site')" href="https://uche-okoroafor.github.io/SoMedia"
+                        target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
                 </div>
 
             </div>
@@ -284,8 +290,8 @@
             <div class="project-text   project-text-mobile">
                 <div class=" image-box-mobile">
 
-                    <a href="https://uche-okoroafor.github.io/SoMedia" target="#blank"><img
-                            src="assets/images/somedia2.jpg" alt="sleeping-box"></a>
+                    <a @click="addVisitor('somedia site')" href="https://uche-okoroafor.github.io/SoMedia"
+                        target="#blank"><img src="assets/images/somedia2.jpg" alt="sleeping-box"></a>
 
 
                 </div>
@@ -313,13 +319,13 @@
 
                     </div>
                     <div class="links  somedia-Text-Mobile">
-                        <a href="https://github.com/uche-okoroafor/SoMedia" target="#blank"><span
-                                class="btn  btn-success" style="background-color: #00cf35;">View code <i
-                                    style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                        <a @click="addVisitor('memoryGame code')" href="https://github.com/uche-okoroafor/SoMedia"
+                            target="#blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code
+                                <i style="color: #1b1f23" class="fab fa-github"></i></span></a>
                         &nbsp;
-                        <a href="https://uche-okoroafor.github.io/SoMedia" target="#blank"><span class="btn btn-info"
-                                style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
-                                    class="fas fa-external-link-alt"></i></span></a>
+                        <a @click="addVisitor('somedia site')" href="https://uche-okoroafor.github.io/SoMedia"
+                            target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                    style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
                     </div>
                 </div>
 
@@ -350,13 +356,13 @@
                     &nbsp; <span>Node.Js <i style="color:#5ED3F3 ;" class="fab fa-node-js"></i></span>
                 </div>
                 <div class="links">
-                    <a href="https://github.com/uche-okoroafor/VStreamer" target="-blank"><span class="btn  btn-success"
-                            style="background-color: #00cf35;">View code <i style="color: #1b1f23"
-                                class="fab fa-github"></i></span></a>
+                    <a @click="addVisitor('vStreamer code site')" href="https://github.com/uche-okoroafor/VStreamer"
+                        target="-blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                                style="color: #1b1f23" class="fab fa-github"></i></span></a>
                     &nbsp;
-                    <a href="https://vstreamers.herokuapp.com/" target="#blank"><span class="btn btn-info"
-                            style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
-                                class="fas fa-external-link-alt"></i></span></a>
+                    <a @click="addVisitor('vStreamer site')" href="https://vstreamers.herokuapp.com/"
+                        target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
                 </div>
 
             </div>
@@ -364,7 +370,7 @@
 
 
                 <div class="image-box" ref="contactManagerImg">
-                    <a href="https://vstreamers.herokuapp.com/" target="#blank">
+                    <a @click="addVisitor('vStreamer site')" href="https://vstreamers.herokuapp.com/" target="#blank">
                         <img src="assets/images/vstreamer2.jpg" alt="sleeping-box"></a>
 
                 </div>
@@ -377,8 +383,8 @@
             <div class="project-text   project-text-mobile">
                 <div class=" image-box-mobile">
 
-                    <a href="https://vstreamers.herokuapp.com/" target="#blank"><img src="assets/images/vstreamer2.jpg"
-                            alt="sleeping-box"></a>
+                    <a @click="addVisitor('vStreamer site')" href="https://vstreamers.herokuapp.com/"
+                        target="#blank"><img src="assets/images/vstreamer2.jpg" alt="sleeping-box"></a>
 
 
                 </div>
@@ -424,8 +430,8 @@
 
                 <div class="image-box" ref="MemoryGameImg">
 
-                    <a href="https://uche-okoroafor.github.io/Memory-Game/" target="#blank"><img
-                            src="assets/images/memoryGameImage1.png" alt="sleeping-box"></a>
+                    <a @click="addVisitor('memoryGame site')" href="https://uche-okoroafor.github.io/Memory-Game/"
+                        target="#blank"><img src="assets/images/memoryGameImage1.png" alt="sleeping-box"></a>
 
 
                 </div>
@@ -451,13 +457,14 @@
 
                 </div>
                 <div class="links">
-                    <a href="https://github.com/uche-okoroafor/Memory-Game/tree/master" target="#blank"><span
+                    <a @click="addVisitor('memoryGame code')"
+                        href="https://github.com/uche-okoroafor/Memory-Game/tree/master" target="#blank"><span
                             class="btn  btn-success" style="background-color: #00cf35;">View code <i
                                 style="color: #1b1f23" class="fab fa-github"></i></span></a>
                     &nbsp;
-                    <a href="https://uche-okoroafor.github.io/Memory-Game/" target="#blank"><span class="btn btn-info"
-                            style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
-                                class="fas fa-external-link-alt"></i></span></a>
+                    <a @click="addVisitor('memoryGame site')" href="https://uche-okoroafor.github.io/Memory-Game/"
+                        target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
                 </div>
 
             </div>
@@ -465,8 +472,8 @@
             <div class="project-text   project-text-mobile">
                 <div class=" image-box-mobile">
 
-                    <a href="https://uche-okoroafor.github.io/Memory-Game/" target="#blank"><img
-                            src="assets/images/memoryGame.jpg" alt="sleeping-box"></a>
+                    <a @click="addVisitor('memoryGame site')" href="https://uche-okoroafor.github.io/Memory-Game/"
+                        target="#blank"><img src="assets/images/memoryGame.jpg" alt="sleeping-box"></a>
 
 
                 </div>
@@ -489,12 +496,13 @@
 
                     </div>
                     <div class="links  MemoryGame-Text-Mobile">
-                        <a href="https://uche-okoroafor.github.io/Memory-Game/"><span class="btn  btn-success"
+                        <a @click="addVisitor('memoryGame code')"
+                            href="https://github.com/uche-okoroafor/Memory-Game/"><span class="btn  btn-success"
                                 style="background-color: #00cf35;">View code <i style="color: #1b1f23"
                                     class="fab fa-github"></i></span></a>
                         &nbsp;
-                        <a href="https://uche-okoroafor.github.io/Memory-Game/" target="#blank"><span
-                                class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                        <a @click="addVisitor('memoryGame site')" href="https://uche-okoroafor.github.io/Memory-Game/"
+                            target="#blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
                                     style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
                     </div>
                 </div>
@@ -513,8 +521,8 @@
 
                 <div class="text-container  ">
                     <p>
-                        A clone of <a href="https://www.tumblr.com" style="color: #ff9f00;"
-                            target="_blank">Tumblr.com</a> home page "Desktop View"
+                        A clone of <a @click="addVisitor('tumblr main site')" href="https://www.tumblr.com"
+                            style="color: #ff9f00;" target="_blank">Tumblr.com</a> home page "Desktop View"
 
                     </p>
 
@@ -527,13 +535,13 @@
 
                 </div>
                 <div class="links">
-                    <a href="https://github.com/uche-okoroafor/Tumblr-Clone" target="-blank"><span
-                            class="btn  btn-success" style="background-color: #00cf35;">View code <i
+                    <a @click="addVisitor('tumblr code')" href="https://github.com/uche-okoroafor/Tumblr-Clone"
+                        target="-blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code <i
                                 style="color: #1b1f23" class="fab fa-github"></i></span></a>
                     &nbsp;
-                    <a href="https://uche-okoroafor.github.io/Tumblr-Clone" target="-blank"><span class="btn btn-info"
-                            style="background-color: #00b8ff;">Visit Site <i style="color: #1b1f23"
-                                class="fas fa-external-link-alt"></i></span></a>
+                    <a @click="addVisitor('tumblr site')" href="https://uche-okoroafor.github.io/Tumblr-Clone"
+                        target="-blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                                style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
                 </div>
 
             </div>
@@ -541,7 +549,8 @@
 
 
                 <div class="image-box" ref="tumblrcloneImg">
-                    <a href="https://uche-okoroafor.github.io/Tumblr-Clone" target="-blank">
+                    <a @click="addVisitor('tumblr site')" href="https://uche-okoroafor.github.io/Tumblr-Clone"
+                        target="-blank">
                         <img src="assets/images/tumblrImg1.png" alt="sleeping-box"></a>
 
                 </div>
@@ -554,8 +563,8 @@
             <div class="project-text   project-text-mobile">
                 <div class=" image-box-mobile">
 
-                    <a href="https://uche-okoroafor.github.io/Tumblr-Clone" target="#blank"><img
-                            src="assets/images/tumblrImg1.png" alt="sleeping-box"></a>
+                    <a @click="addVisitor('tumblr site')" href="https://uche-okoroafor.github.io/Tumblr-Clone"
+                        target="#blank"><img src="assets/images/tumblrImg1.png" alt="sleeping-box"></a>
 
 
                 </div>
@@ -564,8 +573,8 @@
 
                     <div class="text-container  tumblrclone-Text-Mobile ">
                         <p>
-                            A clone of <a href="https://www.tumblr.com" style="color: #ff9f00;"
-                                target="_blank">Tumblr.com</a> home page "Desktop View"
+                            A clone of <a @click="addVisitor('resume')" href="https://www.tumblr.com"
+                                style="color: #ff9f00;" target="_blank">Tumblr.com</a> home page "Desktop View"
 
                         </p>
 
@@ -578,12 +587,12 @@
 
                     </div>
                     <div class="links  tumblrclone-Text-Mobile">
-                        <a href="https://github.com/uche-okoroafor/Tumblr-Clone" target="-blank"><span
-                                class="btn  btn-success" style="background-color: #00cf35;">View code <i
-                                    style="color: #1b1f23" class="fab fa-github"></i></span></a>
+                        <a @click="addVisitor('tumblr code')" href="https://github.com/uche-okoroafor/Tumblr-Clone"
+                            target="-blank"><span class="btn  btn-success" style="background-color: #00cf35;">View code
+                                <i style="color: #1b1f23" class="fab fa-github"></i></span></a>
                         &nbsp;
-                        <a href="https://uche-okoroafor.github.io/Tumblr-Clone" target="-blank"><span
-                                class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
+                        <a @click="addVisitor('tumblr site')" href="https://uche-okoroafor.github.io/Tumblr-Clone"
+                            target="-blank"><span class="btn btn-info" style="background-color: #00b8ff;">Visit Site <i
                                     style="color: #1b1f23" class="fas fa-external-link-alt"></i></span></a>
                     </div>
                 </div>
@@ -673,8 +682,8 @@
 
 
             <div class="footer-text">
-                <p>@ Uche Okoroafor 2020. View the code on <a href="https://github.com/uche-okoroafor/Portfolio"
-                        target="#blank">GitHub.</a></p>
+                <p>@ Uche Okoroafor 2020. View the code on <a @click="addVisitor('view-code')"
+                        href="https://github.com/uche-okoroafor/Portfolio" target="#blank">GitHub.</a></p>
 
             </div>
         </section>

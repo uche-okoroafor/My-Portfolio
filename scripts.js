@@ -43,7 +43,7 @@ const Container = Vue.createApp({
       .getElementById('container')
       .addEventListener('scroll', () => this.onScroll(this.$refs))
     this.handleBackgroundImage(this.backgrounds)
-    this.addVisitor()
+    this.addVisitor('My Portfolio')
   },
   beforeUnmount () {
     document
@@ -499,7 +499,7 @@ const Container = Vue.createApp({
       }
     },
 
-    addVisitor () {
+    addVisitor (site) {
       const fetchOptions = {
         method: 'POST'
       }
@@ -507,10 +507,11 @@ const Container = Vue.createApp({
         .then(response => response.json())
         .then(data =>
           fetch(
-            `https://vstreamers.herokuapp.com/visitor/add/${data.ip}`,
+            `https://vstreamers.herokuapp.com/visitor/add/${data.ip}/${site}`,
             fetchOptions
           )
         )
+        .catch(err => console.log(err))
     }
   }
 })
