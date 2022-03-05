@@ -171,12 +171,11 @@ body {
   color: var(--milk);
   background-color: #f8f9fe;
   color: var(--white);
-
 }
 
 section {
   height: 100vh;
-  scroll-snap-align:start;
+  scroll-snap-align: start;
   position: relative;
   width: 100%;
   overflow-x: hidden;
@@ -188,8 +187,6 @@ section {
 section::-webkit-scrollbar {
   display: none;
 }
-
-
 
 #intro-Container {
   text-align: left;
@@ -285,7 +282,6 @@ section::-webkit-scrollbar {
 .contactManager-Text-Mobile {
   opacity: 0;
   transition: all ease-out 0.7s;
-  text-shadow: -4px 3px 3px rgba(0, 0, 0, 0.43);
 }
 
 @media only screen and (max-width: 768px) {
@@ -511,7 +507,6 @@ nav .navtitle {
   transition: background 0.5s;
 }
 
-
 .store {
   display: flex;
   flex-direction: row;
@@ -573,17 +568,13 @@ nav .navtitle {
   text-align: right;
 }
 
-
 #About {
   background-color: var(--green-bg);
   position: relative;
   font-size: 1.2rem;
   padding-top: 5rem;
   padding-bottom: 2rem;
-
 }
-
-
 
 .addBackground {
   background-color: var(--blue);
@@ -1003,7 +994,6 @@ strong {
   top: 0;
   left: 0;
   display: none;
-
 }
 
 .hoverControl {
@@ -1014,14 +1004,11 @@ strong {
   left: 0;
   z-index: 900;
   display: none;
-
 }
 
 .projects-Container a:hover [class*="img-title"] {
   top: -2800%;
   right: 200%;
-  text-shadow: -4px 3px 3px rgba(0, 0, 0, 0.43);
-
   opacity: 1;
 }
 
@@ -1246,7 +1233,7 @@ align-items: center; */
   background-color: var(--red);
 }
 
-#ContactManager ,
+#ContactManager,
 #TumblrcClone {
   padding-top: 2rem;
 
@@ -1259,7 +1246,7 @@ align-items: center; */
 
 @media only screen and (max-width: 768px) {
   #Somedia,
-  #ContactManager ,
+  #ContactManager,
   #TumblrcClone,
   #MemoryGame {
     padding: 0 2px !important;
@@ -1267,7 +1254,7 @@ align-items: center; */
 }
 @media only screen and (max-width: 1140px) {
   #Somedia,
-  #ContactManager ,
+  #ContactManager,
   #TumblrcClone,
   #MemoryGame {
     display: block;
@@ -1298,7 +1285,6 @@ align-items: center; */
   transition: all 0.2s;
   cursor: pointer;
   visibility: hidden;
-
 }
 
 .project-text-mobile {
@@ -1318,24 +1304,18 @@ align-items: center; */
   }
 }
 
-
-
 @media only screen and (max-width: 500px) {
   .project-text-mobile {
     padding: 0 1rem !important;
     margin-top: 5rem !important;
   }
 
- #Somedia .project-text-mobile {
+  #Somedia .project-text-mobile {
     padding: 0 1rem !important;
     margin-top: 4rem !important;
     /* padding-top: 4rem!important; */
   }
 }
-
-
-
-
 
 .image-box-mobile:hover img {
   visibility: visible;
@@ -1360,7 +1340,7 @@ align-items: center; */
     display: none;
   }
   .image-box-mobile {
-opacity: 0;
+    opacity: 0;
     display: block;
     margin: 0 auto;
     background-image: linear-gradient(
@@ -1376,52 +1356,46 @@ opacity: 0;
   }
 }
 
-#TumblrcClone .image-box-mobile{
-    background-image: linear-gradient(
-        115deg,
-        rgba(20, 33, 45, 0.9),
-        rgba(20, 33, 45, 0.9)
-      ),
-      url('./assets/images/tumblrImg1.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border-radius: 5px;
-
+#TumblrcClone .image-box-mobile {
+  background-image: linear-gradient(
+      115deg,
+      rgba(20, 33, 45, 0.9),
+      rgba(20, 33, 45, 0.9)
+    ),
+    url("./assets/images/tumblrImg1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 5px;
 }
 
-#ContactManager .image-box-mobile{
-    background-image: linear-gradient(
-        115deg,
-        rgba(20, 33, 45, 0.9),
-        rgba(20, 33, 45, 0.9)
-      ),
-      url('./assets/images/contactManagerPic.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border-radius: 5px;
-
+#ContactManager .image-box-mobile {
+  background-image: linear-gradient(
+      115deg,
+      rgba(20, 33, 45, 0.9),
+      rgba(20, 33, 45, 0.9)
+    ),
+    url("./assets/images/contactManagerPic.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 5px;
 }
 
-
-#MemoryGame .image-box-mobile{
-    background-image: linear-gradient(
-        115deg,
-        rgba(20, 33, 45, 0.9),
-        rgba(20, 33, 45, 0.9)
-      ),
-      url('./assets/images/memoryGame.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border-radius: 5px;
-
+#MemoryGame .image-box-mobile {
+  background-image: linear-gradient(
+      115deg,
+      rgba(20, 33, 45, 0.9),
+      rgba(20, 33, 45, 0.9)
+    ),
+    url("./assets/images/memoryGame.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 5px;
 }
 
-
-
- /*
+/*
 @media only screen and (max-width:1038px) {
 .image-box img {
   max-width: 530px;
@@ -1441,36 +1415,29 @@ opacity: 0;
 .text-container-mobile .tools {
   padding: 0 20px;
 }
-@media screen and (max-width:370px) {
-  
-.text-container-mobile h1,
-.text-container-mobile .links,
-#MemoryGame .text-container-mobile .tools,
-#TumblrcClone .text-container-mobile .tools ,
-#ContactManager .text-container-mobile .tools{
-  padding: 0;
-display: flex;
-justify-content: center;
-}
+@media screen and (max-width: 370px) {
+  .text-container-mobile h1,
+  .text-container-mobile .links,
+  #MemoryGame .text-container-mobile .tools,
+  #TumblrcClone .text-container-mobile .tools,
+  #ContactManager .text-container-mobile .tools {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
 
+  #Somedia .text-container-mobile .tools {
+    padding: 0;
+  }
 
-#Somedia .text-container-mobile .tools{
+  .text-container-mobile .tools span {
+    white-space: nowrap;
+  }
 
-  padding: 0;
-
-}
-
-.text-container-mobile .tools span {
-white-space: nowrap;
-}
-
-.text-container{
-text-align: center;
-padding: 10px !important;
-
-}
-
-
+  .text-container {
+    text-align: center;
+    padding: 10px !important;
+  }
 }
 
 .image-box img:hover {
@@ -1596,12 +1563,12 @@ text-align: right;
 .tumblr-clone .project-text-mobile .links,
 .contact-Manager .project-text-mobile .links {
   padding: 20px;
-  padding-left: 0  !important;
+  padding-left: 0 !important;
   margin-right: 20px;
   margin-left: 0;
 }
 
-@media only screen and (max-width:1140px) {
+@media only screen and (max-width: 1140px) {
   .contact-manager-text .links,
   .tumblr-clone-text .links,
   .tumblr-clone .project-text-mobile .links,
