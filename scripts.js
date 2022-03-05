@@ -507,9 +507,7 @@ const Container = Vue.createApp({
         .then(response => response.json())
         .then(data =>
           fetch(
-            `http://localhost:5000/visitor/add/${data.ip}/${site}`,
-
-            // `https://vstreamers.herokuapp.com/visitor/add/${data.ip}/${'site'}`,
+            `https://vstreamers.herokuapp.com/visitor/add/${data.ip}/${site}`,
             fetchOptions
           )
         )
