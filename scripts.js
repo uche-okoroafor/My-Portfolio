@@ -499,25 +499,18 @@ const Container = Vue.createApp({
       }
     },
 
-    async addVisitor () {
+    addVisitor () {
       const fetchOptions = {
         method: 'POST'
-        // headers: {
-        //   Accept: 'application/json',
-        //   'Content-Type': 'application/json'
-        // }
       }
-      await fetch('https://api.ipify.org?format=json').then(response => {
-        if (response) {
-          const ip = response.json().id
-          // console.log(ip, 'response.json()')
-
+      fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data =>
           fetch(
-            `https://vstreamers.herokuapp.com/visitor/add/${ip}`,
+            `https://vstreamers.herokuapp.com/visitor/add/${data.ip}`,
             fetchOptions
-          ).then(res => console.log())
-        }
-      })
+          )
+        )
     }
   }
 })
