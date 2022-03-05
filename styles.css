@@ -242,6 +242,12 @@ section::-webkit-scrollbar {
   scroll-snap-type: y mandatory;
   scrollbar-width: thin;
   scrollbar-color: rgba(var(--black), 0.4) rgba(var(--white), 0.1);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#container::-webkit-scrollbar {
+  display: none;
 }
 
 .navbar {
