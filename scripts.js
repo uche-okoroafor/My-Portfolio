@@ -1,6 +1,7 @@
 const Container = Vue.createApp({
   data () {
     return {
+      inProcess: false,
       indicatorList: [
         {
           isActive: 'activeindicator',
@@ -95,7 +96,7 @@ const Container = Vue.createApp({
     activeIndicator (indicator) {
       this.indicatorList.forEach(indicatorIndex => {
         if (indicatorIndex.title === indicator.title) {
-          this.addVisitor(indicatorIndex.title)
+          !this.inProcess && this.addVisitor(indicatorIndex.title)
           indicatorIndex.isActive = 'activeindicator'
         } else {
           indicatorIndex.isActive = false
@@ -500,7 +501,9 @@ const Container = Vue.createApp({
       }
     },
 
-    addVisitor (site) {
+    addVisitor (link) {
+      this.inProcess = true
+
       const fetchOptions = {
         method: 'POST'
       }
@@ -508,9 +511,15 @@ const Container = Vue.createApp({
         .then(response => response.json())
         .then(data =>
           fetch(
-            `https://vstreamers.herokuapp.com/visitor/add/${data.ip}/${site}`,
+            `https://vstreamers.herokuapp.com/visitor/add/${data.ip}/${link}`,
             fetchOptions
           )
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                this.inProcess = false
+              }
+            })
         )
         .catch(err => console.log(err))
     }
