@@ -501,6 +501,7 @@ const Container = Vue.createApp({
         })
       }
     },
+    // Entry Point
 
     addVisitor (link) {
       this.inProcess = true
