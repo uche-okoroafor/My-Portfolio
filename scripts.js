@@ -35,7 +35,8 @@ const Container = Vue.createApp({
         }
       ],
       menuBarOpen: false,
-      zero: 100
+      zero: 100,
+      screenSize: 0
     }
   },
 
@@ -503,7 +504,7 @@ const Container = Vue.createApp({
 
     addVisitor (link) {
       this.inProcess = true
-
+      this.screenSize = String(screen.width)
       const fetchOptions = {
         method: 'POST'
       }
@@ -511,7 +512,7 @@ const Container = Vue.createApp({
         .then(response => response.json())
         .then(data =>
           fetch(
-            `https://vstreamers.herokuapp.com/visitor/add/${data.ip}/${link}`,
+            `https://vstreamers.herokuapp.com/visitor/add/${data.ip}/${link}/${this.screenSize}`,
             fetchOptions
           )
             .then(response => response.json())
