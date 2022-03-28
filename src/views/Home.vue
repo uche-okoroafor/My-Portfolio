@@ -11,7 +11,7 @@
 <router-link :to="{name: 'Friends', params: { userName:userData.userName, Timeline: 'friends' }}">
 Friends
 </router-link>
-
+// my portfolio of my homepage
 </li>
         <li>Messages</li>
         <li>Followers</li>
